@@ -5,48 +5,29 @@ Back to the basics.
 ## Folder structure
 
 ```
-/<step>/week<nn>/<name>/<program>
+./week<nn>/<name>/<program>
 ```
 
 Here are examples.
 
 ```
-/cpp1st/week01/jongsang/test1
-/cpp1st/week01/jongsang/test2
-/cpp1st/week01/jongsang/myownprogram
+./week01/jongsang/test1
+./week01/jongsang/test2
+./week01/jongsang/myownprogram
 ```
 
 ## Plan
 
-1. Mar 08~13. Mar 14. Jongsang Tack  
-lambda
-
-2. Mar 15~20. Mar 21. Byongmin Park  
-template, specialization
-
-3. Mar 22~27. Mar 28. Taehwan Kim  
-STL (container) - bitset, vector, list, deque, map, tuple, array, etc.
-
-4. Mar 29~Apr 03. Apr 04. Yongho Kang  
-smart pointers, memory management
-
-5. Apr 05~10. Apr 11. Hanju Moon  
-thread
-
-6. _  
-type deduction, auto, decltype
-
-7. _  
-compile time function, assertion
-
-8. _  
-exception and error handling
-
-9. _  
-l-value, r-value, copy, move
-
-10. _  
-algorithm
-
-11. _  
-overloading and overriding
+| No. | From | To/Meeting | Topic | Leader |
+|---|---|---|---|---|
+| 01 | Mar 08 | Mar 14 | Lambda | Jongsang Tack |
+| 02 | Mar 15 | Mar 21 | Template, Templae Specialization | Byongmin Park |
+| 03 | Mar 22 | Mar 28 | STL (container)<br>- bitset, vector, list, deque, map, tuple, array, etc. | Taehwan Kim |
+| 04 | Mar 29 | Apr 04 | Smart Pointers, Memory Management | Yongho Kang |
+| 05 | Apr 05 | Apr 11 | Thread | Hanju Moon |
+| 06 | | | type deduction, auto, decltype | |
+| 07 | | | compile time function, assertion | |
+| 08 | | | exception and error handling | |
+| 09 | | | l-value, r-value, copy, move | |
+| 10 | | | algorithm | |
+| 11 | | | overloading and overriding | |

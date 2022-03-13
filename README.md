@@ -6,5 +6,16 @@ Five software developers in C++ Study Group.
 - Byongmin
 - Jongsang
 
+
+## Folder structure
+
+```
+./cpp1st
+./cpp2nd
+./cpp3rd
+./...
+./devs
+```
+
 ## Steps
 [The first step](cpp1st/README.md)
