@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <functional>
+#include <array>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ public:
         array = {60, 20, 30, 80, 50};
     }
 
-    void Print() {
+    void print() {
         for(auto &n : array)
             cout << n << '\t';
 
@@ -41,7 +42,7 @@ private:
 };
 
 /// test function for example
-void testFuncForTest2(char* pszParam, std::function<int(char*, int)> param) {
+void testFuncForTest2(const char* pszParam, std::function<int(char*, int)> param) {
     cout << pszParam << endl;
     param("Hello", 10);
 }
