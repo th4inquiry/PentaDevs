@@ -14,3 +14,4 @@
 - [Tutorial: Getting started with Git in CLion](https://www.jetbrains.com/help/clion/working-with-git-tutorial.html)
 - [Contribute to projects on GitHub](https://www.jetbrains.com/help/clion/contribute-to-projects.html)
 - [Review Pull Requests](https://blog.jetbrains.com/idea/2020/05/intellij-idea-2020-2-early-access-program-is-starting/#version_control)
+- [C++ support](https://www.jetbrains.com/help/clion/c-support.html)
