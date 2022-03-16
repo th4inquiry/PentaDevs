@@ -2,7 +2,7 @@
 
 Templates are powerful features of C++ which allows us to write generic programs.
 The simple idea is to pass data type as a parameter so that we don't need to write the same code for different data types.
-C++ adds two new keywords to support templates: 'template' and 'typename'. The second keyword can always be replaced by keyword 'class'.
+C++ adds two new keywords to support templates: _'template'_ and _'typename'_. The second keyword can always be replaced by keyword _'class'_.
 
 How do template work?
 Templates are expanded at compiler time. This is like macros.
@@ -178,7 +178,8 @@ The rule for class templates is same as function templates
 Each instantiation of class template has its own copy of member static variables.
 
 ```C++
-template <class T>class Test
+template <class T>
+class Test
 {
 	private:
 		T val;
@@ -340,12 +341,12 @@ int main()
 #### How does template specialization work?
 When we write any template based function or class, compiler creates a copy of that function/class 
 whenever compiler sees that being  used for a new data type or new set of data types(in case of multiple template arguments).
-If a specializaed version is present, compiler first checks with the specialized version and then the main template.
+_If a specializaed version is present, compiler first checks with the specialized version and then the main template._
 Compiler first checks with the most specialized version by matching the passed parameter with the data type(s) specified
 
 #### Reference
-https://www.programiz.com/cpp-programming/class-templates
-https://www.programiz.com/cpp-programming/function-template
-https://www.geeksforgeeks.org/templates-cpp/
+<https://www.programiz.com/cpp-programming/class-templates>
+<https://www.programiz.com/cpp-programming/function-template>
+<https://www.geeksforgeeks.org/templates-cpp/>
 
 * :octocat:
