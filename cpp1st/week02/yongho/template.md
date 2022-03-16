@@ -14,7 +14,7 @@ The idea is simple, source code contains only function/class, but compiled code 
 Class templates are useful when a class defines something that is independent of the data type.
 Can be useful for classes like LinkedList, BinaryTree, Stack, Queue, Array, etc.
 
-###Declaration
+### Declaration
 
 A class template starts with the keyword template followed by template parameter(s) inside <> which is followed by the class declaration.
 
@@ -31,7 +31,7 @@ class className {
 In the above declration, T is the template argument which is a placeholder for the data type used, and class is a keyword.
 Inside the class body, a member variable var and a member function functionName() are both of type T.
 
-###Creating a object
+### Creating a object
 
 Once we've declared and defined a class template, we can create its objects in other classes 
 or functions (such as the main() function) with the following syntax.
@@ -46,7 +46,7 @@ className<float> classObject;
 className<string> classObject;
 '''
 
-###Defining a Class Member Outside
+### Defining a Class Member Outside
 
 Suppose we need to define a function outside of the class template, We can do this with the following code:
 '''
@@ -66,7 +66,7 @@ returnType ClassName<T>::functionName() {
 Notice that the code "template <class T>" is repeated while defining the function outside of the class.
 This is necessary and is part of the syntax.
 
-###Multiple Parameters(Arguments)
+### Multiple Parameters(Arguments)
 In C++, we can use multiple template parameters and even use default arguments for those parameters.
 
 '''
@@ -81,7 +81,7 @@ class ClassName {
 }
 '''
 
-###Default value
+### Default value
 We can specify default arguments to templates.
 
 '''
@@ -111,7 +111,7 @@ T functionName(T parameter1, T parameter2, ...) {
 In the above code, T is a template argument that accepts different data types (int, float, etc.), and typename is a keyword.
 When an argument of a data type is passed to functionName(), the compiler generates a new version of functionName() for the given data type.
 
-###Calling
+### Calling
 Once we've declared and defined a function template, we can call it in other functions or templates (such as the main() function) with the following syntax
 '''
 functionName<dataType>(parameter1, parameter2, ...);
@@ -197,7 +197,7 @@ int main()
 	return 0;
 }
 '''
-####Can we pass nontype parameter to templates?
+#### Can we pass nontype parameter to templates?
 We can pass non-type arguments to templates. Non-type parameters are mainly used for specifying max or min values
 or any other constant value for a particular instance of a template. The important thing to note about non-type parameters is,
 they must be const. The complier must know the value of non-type paramters at compile time. Because the compiler
@@ -233,7 +233,7 @@ int main()
 '''
 
 
-##Template Specialization
+## Template Specialization
 Template in C++ is a feature. We write code once and use it for any data type including user defined data types.
 For example, sort() can be written and used to sort any data type items.
 A class stack can be created that can be used as a stack of any data type.
@@ -265,7 +265,7 @@ Another example could be a class Set that represents a set of elements and suppo
 When the type of elements is char, we may want to use a simple boolean array of size 256 to make a set.
 For other data types, we have to use some other complex technique.
 
-###function template specialization
+### function template specialization
 
 For example, consider the following simple code where we have general template fun() for all data types except int.
 For int, there is a specialized version of fun().
@@ -290,7 +290,7 @@ int main()
 	fun<float>(10.14);  //he main template fun(): 10.14
 }
 '''
-###class template specialization
+### class template specialization
 In the following program, a specialized version of class Test is written for int data type.
 
 '''
@@ -326,13 +326,13 @@ int main()
 	return 0;
 }
 '''
-####How does template specialization work?
+#### How does template specialization work?
 When we write any template based function or class, compiler creates a copy of that function/class 
 whenever compiler sees that being  used for a new data type or new set of data types(in case of multiple template arguments).
 If a specializaed version is present, compiler first checks with the specialized version and then the main template.
 Compiler first checks with the most specialized version by matching the passed parameter with the data type(s) specified
 
-####Reference
+#### Reference
 https://www.programiz.com/cpp-programming/class-templates
 https://www.programiz.com/cpp-programming/function-template
 https://www.geeksforgeeks.org/templates-cpp/
