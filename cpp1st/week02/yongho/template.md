@@ -18,7 +18,7 @@ Can be useful for classes like LinkedList, BinaryTree, Stack, Queue, Array, etc.
 
 A class template starts with the keyword template followed by template parameter(s) inside <> which is followed by the class declaration.
 
-'''
+```C++
 template <class T>
 class className {
 	private:
@@ -27,7 +27,7 @@ class className {
 		T functionName(T arg);
 	... .. ...
 };
-'''
+```
 In the above declration, T is the template argument which is a placeholder for the data type used, and class is a keyword.
 Inside the class body, a member variable var and a member function functionName() are both of type T.
 
