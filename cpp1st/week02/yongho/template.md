@@ -35,21 +35,21 @@ Inside the class body, a member variable var and a member function functionName(
 
 Once we've declared and defined a class template, we can create its objects in other classes 
 or functions (such as the main() function) with the following syntax.
-'''
+```C++
 className<dataType> classObject;
-'''
+```
 
 For example
-'''
+```C++
 className<int> classObject;
 className<float> classObject;
 className<string> classObject;
-'''
+```
 
 ### Defining a Class Member Outside
 
 Suppose we need to define a function outside of the class template, We can do this with the following code:
-'''
+```C++
 template <class T>
 class ClassName {
 	....
@@ -62,14 +62,15 @@ template <class T>
 returnType ClassName<T>::functionName() {
 	//code
 }
-'''
+```
+
 Notice that the code "template <class T>" is repeated while defining the function outside of the class.
 This is necessary and is part of the syntax.
 
 ### Multiple Parameters(Arguments)
 In C++, we can use multiple template parameters and even use default arguments for those parameters.
 
-'''
+```C++
 template <class T, class U, class V = int>
 class ClassName {
 	private:
@@ -79,12 +80,12 @@ class ClassName {
 	public:
 		...
 }
-'''
+```
 
 ### Default value
 We can specify default arguments to templates.
 
-'''
+```C++
 template<class T, class U = char>
 class A {
 	public:
@@ -92,7 +93,7 @@ class A {
 		U y;
 		A() { cout << "Constructor Called" << endl; }
 };
-'''
+```
 
 ## Function Templates
 
@@ -102,31 +103,35 @@ Examples of function templates are sort(), max(), min(), printArray().
 ### Defining
 A function templates starts with the keyword template followed by template parameter(s) inside <> which is followed by the function definition.
 
-'''
+```C++
 template <typename T>
 T functionName(T parameter1, T parameter2, ...) {
 	//code
 }
-'''
+```
+
 In the above code, T is a template argument that accepts different data types (int, float, etc.), and typename is a keyword.
 When an argument of a data type is passed to functionName(), the compiler generates a new version of functionName() for the given data type.
 
 ### Calling
 Once we've declared and defined a function template, we can call it in other functions or templates (such as the main() function) with the following syntax
-'''
+
+```C++
 functionName<dataType>(parameter1, parameter2, ...);
-'''
+```
+
 For example, let us consider a template that adds two numbers:
-'''
+
+```C++
 template <typename T>
 T add(T num1, T num2) {
 	return (num1 + num2); 
 }
-'''
+```
 
 We can then call it in the main() function to add int and double numbers.
 
-'''
+```C++
 int main() {
 	int result1;
 	double result2;
@@ -138,14 +143,16 @@ int main() {
 	result2 = add<double>(2.2, 3.3);
 	cout << result2 << endl;
 }
-'''
+```
+
 ### function overloading and templates
 Both function overloading and templates are example of polymorphism feature of OOP.
 Function overloading is used when multiple functions do similar operations, templates are used when multiple functions do identical operations.
 
 ### static variables and templates
 Each instantiation of function template has its own copy of local static variables.
-'''
+
+```C++
 template <typename T>
 void fun(const T& x)
 {
@@ -165,11 +172,12 @@ int main()
 	getchar();
 	return 0;
 }
-'''
+```
+
 The rule for class templates is same as function templates
 Each instantiation of class template has its own copy of member static variables.
 
-'''
+```C++
 template <class T>class Test
 {
 	private:
@@ -196,7 +204,8 @@ int main()
 	getchar();
 	return 0;
 }
-'''
+```
+
 #### Can we pass nontype parameter to templates?
 We can pass non-type arguments to templates. Non-type parameters are mainly used for specifying max or min values
 or any other constant value for a particular instance of a template. The important thing to note about non-type parameters is,
@@ -204,7 +213,7 @@ they must be const. The complier must know the value of non-type paramters at co
 needs to create functions/classes for a specified non-type value at compile time. In below program, if we replace 10000 or 25 with a variable,
 we get a compiler error.
 
-'''
+```C++
 template <class T, int max>
 int arrMin(T arr[], int n)
 {
@@ -229,8 +238,7 @@ int main()
 	cout << arrMin<char, 256>(arr2, n2); //prints 1
 	return 0;
 }
-
-'''
+```
 
 
 ## Template Specialization
@@ -245,7 +253,7 @@ Is it possible to use different code only when sort() is called for char data ty
 It is possible in C++ to get a special behavior for a particular data type.
 This is called template specialization.
 
-'''
+```C++
 //A generic sort function
 template <class T>
 void sort(T arr[], int size)
@@ -260,7 +268,8 @@ void sort<char>(char arr[], int size)
 {
 	//code to implement counting sort
 }
-'''
+```
+
 Another example could be a class Set that represents a set of elements and supports operations like union, intersection, etc.
 When the type of elements is char, we may want to use a simple boolean array of size 256 to make a set.
 For other data types, we have to use some other complex technique.
@@ -270,7 +279,7 @@ For other data types, we have to use some other complex technique.
 For example, consider the following simple code where we have general template fun() for all data types except int.
 For int, there is a specialized version of fun().
 
-'''
+```C++
 template <class T>
 void fun(T a)
 {
@@ -289,11 +298,12 @@ int main()
 	fun<int>(10);  //Specialized Template for int type: 10
 	fun<float>(10.14);  //he main template fun(): 10.14
 }
-'''
+```
+
 ### class template specialization
 In the following program, a specialized version of class Test is written for int data type.
 
-'''
+```C++
 template <class T>
 class Test
 {
@@ -325,7 +335,8 @@ int main()
 	Test<float> c; //General template object
 	return 0;
 }
-'''
+```
+
 #### How does template specialization work?
 When we write any template based function or class, compiler creates a copy of that function/class 
 whenever compiler sees that being  used for a new data type or new set of data types(in case of multiple template arguments).
