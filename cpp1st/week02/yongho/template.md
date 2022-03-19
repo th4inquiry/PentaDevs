@@ -9,6 +9,10 @@ Templates are expanded at compiler time. This is like macros.
 The difference is, the compiler does type checking before template expansion.
 The idea is simple, source code contains only function/class, but compiled code may contain multiple copies of same function/class.
 
+Templates are a way of making your classes more abstract by letting you define the behavior of the class without actually knowing 
+what datatype will be handled by operations of the class. Templates can be used in conjunction with abstract datatypes in order to allow
+them to handle any type of data.
+
 ## Class Templates
 
 Class templates are useful when a class defines something that is independent of the data type.
@@ -240,9 +244,42 @@ int main()
 	return 0;
 }
 ```
+#### Templated Classes with Templated Functions
+It is also possible to have a templated class that has a member function that is itself a template, separate from the class template.
+For instance,
 
+```C++
+template <class type> class TClass
+{
+	//constructors..etc
+
+	template <class type2> type2 myFunc(type2 arg);
+}
+```
+The function myFunc is a templated function inside of a templated class, and when you actually define the function,
+you must respect this by using the template keyword twice:
+
+```C++
+template <class type> //For the class
+	template <class type2> //For the function
+	type2 TClass<type>::myFunc(type2 arg)
+	{
+		//code
+	}
+```
+The follwing attempt to combine the two is wrong and will not work:
+
+```C++
+//wrong code
+template <class type, class type2> type2 TClass<type>::(type2 arg)
+{
+	//code
+}
+```
+because it suggests that the template is entirely the class template and not a function template at all.
 
 ## Template Specialization
+
 Template in C++ is a feature. We write code once and use it for any data type including user defined data types.
 For example, sort() can be written and used to sort any data type items.
 A class stack can be created that can be used as a stack of any data type.
@@ -270,10 +307,17 @@ void sort<char>(char arr[], int size)
 	//code to implement counting sort
 }
 ```
+Usually when writing code it is easiest to precede from concrete to abstract; therefore, it is easier to write a class for a 
+specific datatype and then proceed to a templated -generic-class.
 
 Another example could be a class Set that represents a set of elements and supports operations like union, intersection, etc.
 When the type of elements is char, we may want to use a simple boolean array of size 256 to make a set.
 For other data types, we have to use some other complex technique.
+
+In many cases when working with templates, you'll write on generic version for all possible data types and leave it at that-every vector
+may be implemented in exactly the same way. The idea of template specialization is to override the default 
+
+**The idea of template specialization is to override the default template implementation to handle a particular type in a different way.**
 
 ### function template specialization
 
@@ -297,7 +341,7 @@ int main()
 {
 	fun<char>('a');  //The main template fun(): a
 	fun<int>(10);  //Specialized Template for int type: 10
-	fun<float>(10.14);  //he main template fun(): 10.14
+	fun<float>(10.14);  //The main template fun(): 10.14
 }
 ```
 
@@ -337,8 +381,140 @@ int main()
 	return 0;
 }
 ```
+#### Template Partial Specialization
+Partial template specialization stems from similar motives as full specialization. This time, however, instead of implementing a class
+for one specific type, you end up implementing a template that still allows some parameterization. That is, you write a template that 
+specializes on one feature but still lets the class user choose other features as part of the template.
+
+Going back to the idea of extending the concept of vectors so that we can have a sortedVector, let's think about how this might look:
+we'll need a way of making comparisons. Fine; we can just use > if it's been implemented, or specialize if it hasn't. But now let's say that
+we wanted to have pointers to objects in our sorted vector. We could sort them by the value of the pointers, just doing a standard > comparison
+(we'll have a vector sorted from low to high):
+
+```C++
+template <typename T>
+class sortedVector
+{
+	public:
+		void insert (T val)
+		{
+			if (length == vec_size)	//length is the number of elements
+			{
+				vec_size *= 2;	//we'll just ignore overflow possibility!
+				vec_data = new T[vec_size];
+			}
+			++length; //we are about to add an element
+
+			//we'll start at the end, sliding elements back until we find the
+			//place to insert the new element
+			int pos;
+			for(pos = length; pos > 0 && val > vec_data[pos-1]; --pos)
+			{
+				vec_data[pos] = vec_data[pos-1];
+			}
+			vec_data[pos] = val;
+		}
+
+	//other methods..
+	private:
+		T *vec_data;
+		int length;
+		int size;
+};
+```
+Now, notice that in the above for loop, we're making a direct comparison between elements of type T. That's OK for most things,
+but it would probably make more sense to have sorted on the actual object type instead of the pointer address.
+To do that, we'd need to write code that had this line:
+
+```C++
+for(pos = length; pos > 0 && *val > *vec_data[pos-1]; --pos)
+```
+
+Of course, that would break for any non-pointer type. What we want to do here is use a partial specialization based on
+whether the type is a pointer or a non-pointer (you could get fancy and have multiple levels of pointers, but we'll stay simple.)
+
+To declare a partially specialized template that handles any pointer types, we'd add this class declaration:
+
+```C++
+template <typename T>
+class sortedVector<T *>
+{
+	public:
+		//same functions as before. Now the insert function looks like this:
+		insert(T *val)
+		{
+			if (length == vec_size)	//length is the number of elements
+			{
+				vec_size *= 2;	//we'll just ignore overflow possibility!
+				vec_data = new T[vec_size];
+			}
+			++length; //we are about to add an element
+
+			//we'll start at the end, sliding elements back until we find the
+			//place to insert the new element
+			int pos;
+			for(pos = length; pos > 0 && *val > *vec_data[pos-1]; --pos)
+			{
+				vec_data[pos] = vec_data[pos-1];
+			}
+			vec_data[pos] = val;
+		}
+
+	private:
+		T** vec_data;
+		int length;
+		int size;
+}
+```
+There are a couple of syntax points to notice here. 
+
+First, our template paramter list still names T as the parameter, but the declaration now has a T* after the name of the class; 
+this tells the compiler to match a pointer of any type with this template instead of the more general template.
+
+The second thing to note is that T is now the type pointed to ;**it is not itself a pointer.**
+For instance, when you declare a sortedVector<int *>, T will refer to the int type! This makes some sense if you think of it
+as a form of pattern matching where T matches the type if that type is followed by an asterisk.
+This does mean that you have to be a tad bit more careful in your implementation: note that vec_data is a T** 
+because we need a dynamically sized array made up of pointers.
+
+You might wonder if you really want your sortedVector type to work like this--after all, if you're putting them in an array of pointers,
+you'd expect them to be sorted by pointer type. But there's a practical reason for doing this: when you allocate memory for an array of objects,
+the default constructor must be called to construct each object. If no default constructor exists (for instance, if every object need some data 
+to be created), you're stuck needing a list of pointers to objects, but you probabley want them to be sorted the same way the actual objects themselves would be!
+
+Note, by the way, that you can also partially specialize on template arguments--for instance, if yoy had a fixedVector type that allowed the
+user of the class to specify both a type to store and the length of the vector (possibly to avoid the cost of dynamic memory allocations),
+it might look something like this:
+
+```C++
+template <typename T, unsigned length>
+class fixedVector { ... };
+```
+Then you could partially specialize for booleans with the following syntax
+
+```C++
+template <unsigned length>
+class fixedVector<bool, length> { ... };
+```
+Note that since T is no longer a template parameter, it's left out of the template paramter list, leaving only length.
+Also note that length now shows up as part of fixedVector's name (unlike when you have a generic template declaration, 
+where you specify nothing after the name). (By the way, don't be surprised to see a template parameter that's a non-type:
+it's perfectly valid, and sometimes useful, to have template arguments that are integer types such as unsigned.)
+
+A final implementation detail comes up with partial specializations: how does the compiler pick which specialization to use
+if there are a combination of completely generic types, some partial specializations, and maybe even some full specializations?
+The general rule of thumb is that the compiler will pick the most specific template specialization--the most specific template
+specialization is the one whose template arguments would be accepted by the other template decalrations, but which would
+not accept all possible arguments that other templates with the same name would accept.
+
+For instance, if you decided that you wanted a sortedVector<int *> that sorted by memory location, you could create a 
+full specialization of sortedVector and if you declared a sortedVector<int*>, then the compiler would pick that implementation
+over the the less-specific partial specialization for pointers. It's the most specialized since only an int * matches the full
+specialization, not any other pointer type such as a double *, wheres int * certainly could be a paramter to either of the other templates.
+
 
 #### How does template specialization work?
+
 When we write any template based function or class, compiler creates a copy of that function/class 
 whenever compiler sees that being  used for a new data type or new set of data types(in case of multiple template arguments).
 **If a specializaed version is present, compiler first checks with the specialized version and then the main template.**
@@ -351,4 +527,7 @@ Compiler first checks with the most specialized version by matching the passed p
 
 <https://www.geeksforgeeks.org/templates-cpp/>
 
+<https://www.cprogramming.com/tutorial/templated_functions.html>
+
+<https://www.cprogramming.com/tutorial/template_specialization.html>
 * :octocat:
