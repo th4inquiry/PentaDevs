@@ -99,10 +99,51 @@ class A {
 };
 ```
 
+This is class template example
+
+```C++
+template <class T>
+class mypair 
+{
+	T a, b;
+	public:
+		mypair(T first, T second)
+		{
+			a=first;
+			b=second;
+		}
+		T getmax();
+}
+
+template <class T>
+T mypair<T>::getmax()
+{
+	T retval;
+	retval = (a>b)? a:b;
+	return retval;
+}
+
+int main()
+{
+	mypair <int> myobject (100, 75);
+	cout << myobject.getmax();
+	return 0;
+}
+```
+
+
 ## Function Templates
 
 We can create generic function to work with different data types by using a template.
 Examples of function templates are sort(), max(), min(), printArray().
+
+Function templates are special functions that can operate with generic types.
+This allow us to create a function template whose functionality can be adapted to more than one type or class without repeating the entire code for each type.
+
+In C++, this can be achieved using template parameters.
+A template parameter is a special kind of parameter that can be used to pass a type as argument: just like regular function paramters can be
+used to pass values to a function, template paramters allow to pass also types to a function. These function templates can use these parameters
+as if they were any other regular type.
 
 ### Defining
 A function templates starts with the keyword template followed by template parameter(s) inside <> which is followed by the function definition.
@@ -112,10 +153,18 @@ template <typename T>
 T functionName(T parameter1, T parameter2, ...) {
 	//code
 }
+
+template <class T>
+T functionName(T parameter1, T parameter2, ...) {
+	//code
+}
 ```
 
 In the above code, T is a template argument that accepts different data types (int, float, etc.), and typename is a keyword.
 When an argument of a data type is passed to functionName(), the compiler generates a new version of functionName() for the given data type.
+
+The only difference between both prototype is the use of either the keyword class or the keyword typename.
+Its use is indistinct, since both expressions have exactly the same meaning and behave exactly the same way.
 
 ### Calling
 Once we've declared and defined a function template, we can call it in other functions or templates (such as the main() function) with the following syntax
@@ -146,6 +195,60 @@ int main() {
 	//calling with double parameters
 	result2 = add<double>(2.2, 3.3);
 	cout << result2 << endl;
+}
+```
+
+Other example from cplusplus.com 
+```C++
+//function template
+template <class T>
+T GetMax (T a, T b)
+{
+	T result;
+	result = (a>b)? a : b;
+	return result;
+}
+
+int main()
+{
+	int i=5. j=6, k;
+	long l=10, m=5, n;
+	k = GetMax<int>(i,j);
+	n = GetMax<long>(l,m);
+	cout << k << endl;	//prints 6
+	cout << n << endl;	//prints 10
+
+	//This expression is also working. The compiler can automatically find out template parameter type.
+	k = GetMax(i,j);
+	n = GetMax(l,m);
+	cout << k << endl;	//prints 6
+	cout << n << endl;	//prints 10
+	return 0;
+}
+```
+
+When you want to use different type in two parameters. We can also define function templates that accept
+more than one type parameter,simply by specifying more template paramters between the angle brackets.
+
+```C++
+//function template
+template <class T, class U>
+T GetMax (T a, U b)
+{
+	return (a>b)? a : b;
+}
+
+int main()
+{
+	int i=5, k;
+	long l=10;
+	k = GetMax<int, long>(i,l);
+	cout << k << endl;	//prints 10
+
+	//This expression is also working. The compiler can automatically find out template parameter type.
+	k = GetMax(i,j);
+	cout << k << endl;	//prints 10
+	return 0;
 }
 ```
 
@@ -244,6 +347,45 @@ int main()
 	return 0;
 }
 ```
+
+This is non-type parameters sample code from Cplusplus.com
+
+```C++
+template <class T, int N>
+class mySequence
+{
+	T memBlock[N];
+	public:
+		void setMember(int x, T value);
+		T getMember(int x);
+}
+
+template <class T, int N>
+void mySequence<T, N>::setMember (int x, T value)
+{
+	memBlock[x]=value;
+}
+
+template <class T, int N>
+T mySequence::getMember(int x)
+{
+	return memBlock[x];
+}
+
+int main()
+{
+	mySequence <int, 5> myInts;
+	mySequence <double, 5> myFloats;
+	myInts.setMember (0, 100);
+	myFloats.setMemver (3, 3.1416);
+	cout << myInts.getMember(0) << '\n';	//prints 100
+	cout << myFloats.getMember(3) << '\n';	//prints 3.1415
+	return 0;
+}
+```
+It is also possible to set default values or types for class template parameters. For example, if the previous class
+template definition had been:
+
 #### Templated Classes with Templated Functions
 It is also possible to have a templated class that has a member function that is itself a template, separate from the class template.
 For instance,
@@ -277,6 +419,16 @@ template <class type, class type2> type2 TClass<type>::(type2 arg)
 }
 ```
 because it suggests that the template is entirely the class template and not a function template at all.
+
+```C++
+template <class T=char, int N=10> class mySequence {...};
+```
+We could create objects using the default parameters by declaring:
+
+```C++
+mySequence<> mySeq;
+mySequence<char, 10> mySeq; //This would be equivalent with upperline
+```
 
 ## Template Specialization
 
@@ -381,6 +533,70 @@ int main()
 	return 0;
 }
 ```
+
+template specialization sample from cplusplus.com
+
+```C++
+//class template
+template <class T>
+class mycontainer
+{
+	T element;
+	public:
+		mycontainer (T arg)
+		{
+			element = arg;
+		}
+		T increase()
+		{
+			return ++element;
+		}
+}
+
+//clss template specialization:
+template<>
+class mycontainer <char>
+{
+	char element;
+	public:
+		mycontainer (char arg)
+		{
+			element = arg;
+		}
+
+		char uppercase()
+		{
+			if ((element >= 'a') && (element <='z'))
+				element +='A'-'a';
+			return element;
+		}
+};
+
+int main()
+{
+	mycontainer<int> myint(7);	
+	mycontainer<char> mychar('j');
+	cout << myint.increase() << endl; //prints 8
+	cout << mychar.uppercase() << endl; //prints J
+	return 0;
+}
+
+```
+
+First of all, notice that we precede the class template name with an empty template<> parameter list.
+This is to explicitly declare it as a template specialization.
+But more importaint than this prefix, is the <char> specialization parameter after the class template name.
+This specialization parameter itself the type for which we are going to declare a template class specialization (char).
+Notice the differences between the generic class template and the specialization:
+
+```C++
+template <class T> class mycontainer {...}; //generic template
+template <> class mycontainer <char> {...}; //specialization
+```
+When we declare specializations for a template class, we must also define all its members, even those exactly equal to 
+the generic template class, because there is no "inheritance" of members from the generic template to the specialization.
+
+
 #### Template Partial Specialization
 Partial template specialization stems from similar motives as full specialization. This time, however, instead of implementing a class
 for one specific type, you end up implementing a template that still allows some parameterization. That is, you write a template that 
@@ -520,6 +736,25 @@ whenever compiler sees that being  used for a new data type or new set of data t
 **If a specializaed version is present, compiler first checks with the specialized version and then the main template.**
 Compiler first checks with the most specialized version by matching the passed parameter with the data type(s) specified
 
+### Templates and multiple-file projects
+
+From the point of view of the compiler, templates are not normal functions or classes. They are compiled on demand,
+meaning that code of a template function is not compiled until an instantiation with specific template arguments is required.
+At that moment, when an instantiation is required, the compiler generates a function specially for the those arguments from the template.
+
+When projects grow it is usual to split the code of a program in different source code files. In these cases, the interface and implementation
+are generally separated. Taking a library of functions as example, the interface generally consists of declarations of the prototypes of all
+the functions that can be called. These are genenrally declared in a "header file" with a .h extension, and the implementation
+(the definition of these functions) is in and independent file with c++ code.
+
+Because templates are compiled when required, this forces a restriction for multi-file projects: **the implementation (definition) of a template class
+or function must be in the same file as its declaration. That means that we cannot separate the interface in s separate header file, and that
+we must include both interface and implementation in any file that uses the templates.**
+
+Since no code is generated until a template is instantiated when required, compilers are prepared to allow the inclusion more than once
+of the same template file with both declarations and definitions in a project without generating linkage errors.
+
+
 #### Reference
 <https://www.programiz.com/cpp-programming/class-templates>
 
@@ -530,4 +765,7 @@ Compiler first checks with the most specialized version by matching the passed p
 <https://www.cprogramming.com/tutorial/templated_functions.html>
 
 <https://www.cprogramming.com/tutorial/template_specialization.html>
+
+<https://www.cplusplus.com/doc/oldtutorial/templates/>
+
 * :octocat:
