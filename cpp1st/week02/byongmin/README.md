@@ -4,15 +4,15 @@
 
 - Definition
 - Defining and using templates
-- Template Instantiation
 - Template parameters and template arguments
-- Class templates
 - Function templates
+- Class templates
+- Template Specialization and Instantiation (implicit, explicit)
+- Explicuit (full) specialization
+- Partial specialization
 - Variable templates (c++14)
 - Type alias, alias template (c++11)
 - Template argument deduction
-- Explicuit (full) specialization
-- Partial specialization
 - Introduce CRTP (Curiously recurring template pattern)
 - Design Pattern using Tempalte
 
@@ -75,6 +75,7 @@
 
 ## other keyword
 
+- Template type deduction
 - [Template Instantiation](https://www.ibm.com/docs/en/i/7.3?topic=only-template-instantiation-c)
 - [Template metaprogramming](https://en.wikipedia.org/wiki/Template_metaprogramming)
 
@@ -82,3 +83,32 @@
 
 - [Modern C++ Singleton Template](https://codereview.stackexchange.com/questions/173929/modern-c-singleton-template)
 - [CRTP (Curiously recurring template pattern)](https://en.cppreference.com/w/cpp/language/crtp)
+
+## reference
+
+- [Youtube CppCon, Back to Basics : Templates (part 1 of 2)](https://youtu.be/XN319NYEOcE)
+- [Youtube CppCon, Back to Basics : Templates (part 2 of 2)](https://youtu.be/2Y9XbltAfXs)
+- [MORDERNES C++](https://www.modernescpp.com/index.php/template-instantiation)
+
+## examples
+
+- Simple tempalte
+- Kinds of Template
+  - class template
+  - function template
+  - member function template
+  - alias template
+  - variable template
+  - lambda template
+- Template parameters and template arguments
+- Instantiation and Specialization
+  - Implicit Instantiation
+  - Explicit Instantiation
+  - Explicit (full) specialization
+  - Partial specialization
+- Practical examples
+  - Templates and multiple-file projects
+  - Introduce CRTP (Curiously recurring template pattern)
+  - Design Pattern using Tempalte
+- Template type deduction
+  
