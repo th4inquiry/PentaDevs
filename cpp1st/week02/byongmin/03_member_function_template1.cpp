@@ -11,6 +11,7 @@ template <typename T>
 class Stack
 {
 public:
+
     Stack(int size) : mySize(size)
     {
         cout << "Stack ctor called. Type : " << typeid(T).name() << endl;

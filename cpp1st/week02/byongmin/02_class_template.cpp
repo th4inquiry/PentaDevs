@@ -7,13 +7,13 @@
 
 using namespace std;
 
-template <typename T>
+template <typename T, int N>
 class Stack
 {
 public:
-    explicit Stack(int size) : mySize(size)
+    explicit Stack() : mySize(N)
     {
-        cout << "Stack ctor called. Type : " << typeid(T).name() << endl;
+        cout << "++ Stack ctor called. Type : " << typeid(T).name() << endl;
     }
 
     T top()
@@ -53,17 +53,17 @@ private:
 
 int main()
 {
-    Stack<int> stackNum{3};
+    Stack<int, 3> stackNum;
     stackNum.push(10);
     stackNum.push(20);
     stackNum.push(30);
-    //stackNum.push(40); // not pushed.
+    // stackNum.push(40); // not pushed.
 
     cout << "stackNum.top() : " << stackNum.top() << endl;
     stackNum.pop();
     cout << "stackNum.top() : " << stackNum.top() << endl;
 
-    Stack<string> stackStr{3};
+    Stack<string, 3> stackStr;
     stackStr.push("first");
     stackStr.push("second");
     stackStr.push("third");
