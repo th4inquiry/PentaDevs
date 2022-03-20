@@ -12,3 +12,9 @@
 
 ## Youtube
 Youtube playlist: [C++ / Lambda](https://www.youtube.com/playlist?list=PLgMzFcLO6jyBG7attcB7aOzVz8Gg8UK-O&jct=SZlu26aa05X8gosinmNTiQV99bkC1Q): Playlist
+
+## Standards
+- ISO/IEC 14882:2011 5.1.2 Lambda expressions \[expr.prim.lambda\]
+- ISO/IEC 14882:2014 5.1.2 Lambda expressions \[expr.prim.lambda\]
+- ISO/IEC 14882:2017 8.1.5 Lambda expressions \[expr.prim.lambda\]
+- ISO/IEC 14882:2020 7.5.5 Lambda expressions \[expr.prim.lambda\]
