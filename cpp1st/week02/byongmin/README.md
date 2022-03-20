@@ -17,6 +17,10 @@
 
 ## Template parameters and template arguments
 
+- type template parameters
+- non-type template parameters
+- template template parameters
+
 ## Instantiation and Specialization
 
 - Implicit Instantiation
