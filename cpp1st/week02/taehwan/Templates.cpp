@@ -8,8 +8,6 @@
 #include <memory>
 #include <cstring>
 
-#define FUNC_DEF(func) { func, #func },
-
 using namespace std;
 
 void foo() {
