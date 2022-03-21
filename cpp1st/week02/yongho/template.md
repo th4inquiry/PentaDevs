@@ -33,6 +33,8 @@ class className {
 };
 ```
 In the above declration, T is the template argument which is a placeholder for the data type used, and class is a keyword.
+parameter-list : a non-empty comma-separated list of the template paramters, each of which is eitther a non-type parameter,
+a type parameter, a template parameter, or a parameter pack of any of those.
 Inside the class body, a member variable var and a member function functionName() are both of type T.
 
 ### Creating a object
@@ -48,6 +50,69 @@ For example
 className<int> classObject;
 className<float> classObject;
 className<string> classObject;
+```
+
+### Class template instantiation
+
+A class template by itself is not a type, or an object, or any other entity. No code is generated from a source file that
+contains only template definitions. In order for any code to appear, a template must be instantiated: the template arguments
+must be provided so that the compiler can generate an actual class (or function, from a function template).
+
+#### Explicit instantiation
+
+Classes, functions, variables and member template specializations can be explicitly instantiated from their templates.
+Member functions, member classes, and static data members of class templates can be explicitly instantiated from their member definitions.
+Explicit instantiation can only appear in the enclosing namespace of the template, unless it uses qualified-id:
+
+```C++
+namespace N
+{
+	template<class T>
+	class Y //template definition
+	{
+		void mf() {}
+	}
+}
+
+//template class Y<int>; //error: class template Y not visible in the global namespace
+using N::Y;
+//template class Y<int>; //error: explicit instantiation outside of the namespace of the template
+template class N::Y<char*>; //OK: explicit instantiation
+template void N::Y<double>::mf(); //OK: explicit instantiation
+```
+
+#### Implicit instantiation
+
+When code refers to a template in context that requires a completely defined type, or when the completeness of the type affects the code,
+and this particular type has not been explicitly instantiated, implicit instantiation occurs.
+For example when an object of this type is constructed, but not when a pointer to this type is constructed.
+
+This applies to the members of the class template: unless the member is used in the program, it is not instantiated, and does not require a definition.
+
+```C++
+template<class T>
+struct Z //template definition
+{
+	void f() {}
+	void g(); //never defined
+}
+
+template struct Z<double>; //explicit instantiation of Z<double>
+Z<int> a;	//implicit instantiation of Z<int>
+Z<char>* p; //nothing is instantiated here
+
+p->f(); //implicit instantiation of Z<char> and Z<char>::f() occurs here.
+			//z<char>::g() is never needed and never instantiated:
+			//it does not have to be defined
+```
+
+If a class template has benn declared, but not defined, at the point of instantiation, the instantiation yields an incomplete class type:
+
+```C++
+template<class T>
+class X; //declaration, not definition
+
+X<char> ch;	//error: incomplete type X<char>
 ```
 
 ### Defining a Class Member Outside
@@ -130,6 +195,7 @@ int main()
 	return 0;
 }
 ```
+
 
 
 ## Function Templates
@@ -767,5 +833,7 @@ of the same template file with both declarations and definitions in a project wi
 <https://www.cprogramming.com/tutorial/template_specialization.html>
 
 <https://www.cplusplus.com/doc/oldtutorial/templates/>
+
+<https://en.cppreference.com/w/cpp/language/class_template>
 
 * :octocat:
