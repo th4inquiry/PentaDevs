@@ -10,12 +10,14 @@ protected:
     template <typename T>
     T add(T p)
     {
+        std::cout << __FUNCSIG__ << std::endl << std::endl;
         return p;
     }
 
     template <typename T, typename... Ts>
     T add(T first, Ts... others)
     {
+        std::cout << __FUNCSIG__ << std::endl << std::endl;
         return first + add(others...);
     }
 };
