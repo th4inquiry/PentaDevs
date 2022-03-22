@@ -37,4 +37,5 @@
 - [MORDERNES C++](https://www.modernescpp.com/index.php/template-instantiation)
 - [microsft docs, Templates C++](<https://docs.microsoft.com/en-us/cpp/cpp/templates-cpp?view=msvc-170>)
 - [cppreference.com](https://en.cppreference.com/w/cpp/language/templates)
+- [wikipedia, Partial template specialization](https://en.wikipedia.org/wiki/Partial_template_specialization)
 - [CRTP (Curiously recurring template pattern)](https://en.cppreference.com/w/cpp/language/crtp)

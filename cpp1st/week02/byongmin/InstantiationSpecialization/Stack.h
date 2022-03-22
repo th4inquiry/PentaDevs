@@ -1,5 +1,6 @@
 
 #include <vector>
+#include <string>
 
 template <typename T, int N>
 class Stack
@@ -17,3 +18,6 @@ private:
     std::vector<T> myData;
     int mySize;
 };
+
+template class Stack<int, 3>; 
+template class Stack<std::string, 3>; 
