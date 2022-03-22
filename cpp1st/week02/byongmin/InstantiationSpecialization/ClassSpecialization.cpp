@@ -1,4 +1,5 @@
 // PartialSpecializeTemplate
+// https://en.wikipedia.org/wiki/Partial_template_specialization
 
 #include <iostream>
 
@@ -38,7 +39,7 @@ int main()
 {
     KeyValuePair<int, float> data1;     // print (1)
     cout << endl;
-    KeyValuePair<const int, string> data2;    // print (2)
+    KeyValuePair<int, string> data2;    // print (2)
     cout << endl;
     KeyValuePair<short, string> data3;  // print (3)
     cout << endl;
@@ -49,5 +50,3 @@ int main()
     return 0;
 }
 
-
-// https://en.wikipedia.org/wiki/Partial_template_specialization
