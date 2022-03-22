@@ -21,7 +21,7 @@ Here are examples.
 | No. | From | To/Meeting | Topic | Leader | Status |
 |---|---|---|---|---|---|
 | 01 | Mar 08 | Mar 14 | Lambda | Jongsang Tack | Done |
-| 02 | Mar 15 | Mar 21 | Template, Template Specialization | Byongmin Park | In progress |
+| 02 | Mar 15 | Mar 21 | Template, Template Specialization | Byongmin Park | Done |
 | 03 | Mar 22 | Mar 28 | STL (container)<br>- bitset, vector, list, deque, map, tuple, array, etc. | Taehwan Kim | |
 | 04 | Mar 29 | Apr 04 | Smart Pointers, Memory Management | Yongho Kang | |
 | 05 | Apr 05 | Apr 11 | Thread | Hanju Moon | |
