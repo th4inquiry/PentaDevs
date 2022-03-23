@@ -44,5 +44,3 @@ int Stack<T, N>::size()
     return myData.size();
 }
 
-template class Stack<int, 3>; 
-template class Stack<std::string, 3>; 

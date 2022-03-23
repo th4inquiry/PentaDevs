@@ -9,6 +9,8 @@ class Cat
 {
 public:
     Cat() { cout << "Cat ctor..." << endl; }
+    ~Cat() { cout << "Cat dtor..." << endl; }
+
     void cry() { cout << "Meow~" << endl; }
 };
 
@@ -16,6 +18,8 @@ class Dog
 {
 public:
     Dog() { cout << "Dog ctor..." << endl; }
+    ~Dog() { cout << "Dog dtor..." << endl; }
+
     void cry() { cout << "Woof!" << endl; }
 };
 

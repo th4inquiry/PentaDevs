@@ -12,7 +12,7 @@ int main()
     stackNum.push(10);
     stackNum.push(20);
     stackNum.push(30);
-    // // stackNum.push(40); // not pushed.
+    // stackNum.push(40); // not pushed.
 
     cout << "stackNum.top() : " << stackNum.top() << endl;
     stackNum.pop();

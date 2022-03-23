@@ -1,6 +1,7 @@
 // variable template
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -16,11 +17,13 @@ int main()
     float f = pi<float>;
     double d = pi<double>;
     char const *s = pi<char const *>;
+    //string str = pi<string>;      // error! std::string is not literal type
 
     cout << "int : " << i << endl;
     cout << "float : " << f << endl;
     cout << "double : " << d << endl;
     cout << "char const * : " << s << endl;
+    //cout << "string : " << str << endl;
 
     return 0;
 }
