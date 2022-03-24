@@ -10,7 +10,7 @@ int main()
     int n = sizeof(arr) / sizeof(arr[0]);
     std::vector<int> vect(arr, arr + n);
 
-    std::cout << "Vector is: ";
+    std::cout << "Vector is: \n";
     for (int i = 0; i < n; i++)
         std::cout << vect[i] << " ";
 
@@ -24,20 +24,20 @@ int main()
     //Reverse the Vector
     reverse(vect.begin(), vect.end());
 
-    std::cout << "\n\nVector after reversing is: ";
+    std::cout << "\n\nVector after reversing is: \n";
     for (int i = 0; i < n; i++)
         std::cout << vect[i] << " ";
 
-    std::cout << "\n\nMaximum element of vector is : ";
+    std::cout << "\n\nMaximum element of vector is : \n";
     std::cout << *max_element(vect.begin(), vect.end());
 
-    std::cout << "\n\nMimimum element of vector is : ";
+    std::cout << "\n\nMimimum element of vector is : \n";
     std::cout << *min_element(vect.begin(), vect.end());
 
     //Starting the summation from 0
-    std::cout << "\n\nThe summation of vector elements is : ";
+    std::cout << "\n\nThe summation of vector elements is : \n";
     std::cout << accumulate(vect.begin(), vect.end(), 0);
+    std::cout << "\n";
 
     return 0;
 }
-
