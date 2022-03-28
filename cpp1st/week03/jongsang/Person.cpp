@@ -32,7 +32,7 @@ Person& Person::operator=(const Person& person) noexcept
     age = person.age;
     return *this;
 }
-// move assigment
+// move assignment
 Person& Person::operator=(Person&& person) noexcept
 {
     std::wcout << L"Person move assigment" << std::endl;
