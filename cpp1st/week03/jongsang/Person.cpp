@@ -1,7 +1,7 @@
 #include "Person.h"
 #include <iostream>
 
-// defautl constructor
+// default constructor
 Person::Person()
 {
     std::wcout << L"Person default constructor" << std::endl;
