@@ -7,6 +7,8 @@
 #include <iomanip>
 
 #include "Containers.cpp"
+#include "Algorithms.cpp"
+#include "Utilities.cpp"
 
 using namespace std;
 
@@ -18,6 +20,8 @@ private:
     void ComponentSelect();
 
     Containers containers;
+    Algorithms algorithms;
+    Utilities utilities;
     int select;
     bool isTestEnd;
 };
@@ -34,7 +38,8 @@ void ExampleExecutor::ComponentSelect() {
         cout << setw(20) << "1. Containers";
         cout << setw(20) << "2. Iterators";
         cout << setw(20) << "3. Functions";
-        cout << setw(20) << "4. Algorithms" << endl;
+        cout << setw(20) << "4. Algorithms";
+        cout << setw(20) << "5. Utilities" << endl;
         cout << "0. Test end" << endl;
         cout << "> ";
         cin >> select;
@@ -51,7 +56,10 @@ void ExampleExecutor::ComponentSelect() {
                 cout << "TBU" << endl;
                 break;
             case 4:
-                cout << "TBU" << endl;
+                algorithms.AlgorithmSelect();
+                break;
+            case 5:
+                utilities.UtilitySelect();
                 break;
             case 0:
                 isTestEnd = true;

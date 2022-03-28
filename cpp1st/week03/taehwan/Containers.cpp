@@ -24,24 +24,26 @@ public:
 
     void ContainerSelect();
 private:
-    void Example_array();
-    void Example_vector();
-    void Example_deque();
-    void Example_forward_list();
-    void Example_list();
-    void Example_set();
-    void Example_map();
-    void Example_multiset();
-    void Example_multimap();
-    void Example_stack();
-    void Example_queue();
-    void Example_proirity_queue();
+    void ExampleArray();
+    void ExampleVector();
+    void ExampleDeque();
+    void ExampleForwardList();
+    void ExampleList();
+    void ExampleSet();
+    void ExampleMap();
+    void ExampleMultiset();
+    void ExampleMultimap();
+    void ExampleStack();
+    void ExampleQueue();
+    void ExampleProirityQueue();
 
     bool isTestEnd;
     int select;
 };
 
 void Containers::ContainerSelect() {
+    isTestEnd = false;
+
     while (isTestEnd != true) {
         cout << "-- Select number from the list below:" << endl;
         cout.setf(ios::left);
@@ -58,40 +60,40 @@ void Containers::ContainerSelect() {
                 isTestEnd = true;
                 break;
             case 1:
-                Example_array();
+                ExampleArray();
                 break;
             case 2:
-                Example_vector();
+                ExampleVector();
                 break;
             case 3:
-                Example_deque();
+                ExampleDeque();
                 break;
             case 4:
-                Example_forward_list();
+                ExampleForwardList();
                 break;
             case 5:
-                Example_list();
+                ExampleList();
                 break;
             case 6:
-                Example_set();
+                ExampleSet();
                 break;
             case 7:
-                Example_map();
+                ExampleMap();
                 break;
             case 8:
-                Example_multiset();
+                ExampleMultiset();
                 break;
             case 9:
-                Example_multimap();
+                ExampleMultimap();
                 break;
             case 10:
-                Example_stack();
+                ExampleStack();
                 break;
             case 11:
-                Example_queue();
+                ExampleQueue();
                 break;
             case 12:
-                Example_proirity_queue();
+                ExampleProirityQueue();
                 break;
             default:
                 cout << "Error: Choose a correct number!" << endl;
@@ -103,7 +105,7 @@ void Containers::ContainerSelect() {
     return;
 }
 
-void Containers::Example_array() {
+void Containers::ExampleArray() {
     array<int, 3> a1 { {1, 2, 3} };    /// double-braces required in C++11 and prior
     array<int, 3> a2 = {1, 2, 3};    /// double braces never required in C++14 and beyond
     array<string, 2> a3 = {string("a"), "b"};
@@ -121,7 +123,7 @@ void Containers::Example_array() {
     return;
 }
 
-void Containers::Example_vector() {
+void Containers::ExampleVector() {
     vector<int> v = {7, 5, 16, 8};
 
     v.push_back(25);
@@ -152,7 +154,7 @@ void Containers::Example_vector() {
     return;
 }
 
-void Containers::Example_deque() {
+void Containers::ExampleDeque() {
     deque<int> d = {7, 5, 16, 8};
 
     d.push_front(13);
@@ -184,7 +186,7 @@ void Containers::Example_deque() {
     return;
 }
 
-void Containers::Example_forward_list() {
+void Containers::ExampleForwardList() {
     forward_list<int> flist1;
     forward_list<int> flist2;
 
@@ -236,7 +238,7 @@ void Containers::Example_forward_list() {
     return;
 }
 
-void Containers::Example_list() {
+void Containers::ExampleList() {
     list<int> l = { 7, 5, 16, 8 };
 
     l.push_front(25);
@@ -256,7 +258,7 @@ void Containers::Example_list() {
     return;
 }
 
-void Containers::Example_set() {
+void Containers::ExampleSet() {
     set<int, greater<int>> s1;
     //set<int, less<int>>s1;
 
@@ -298,7 +300,7 @@ void Containers::Example_set() {
     return;
 }
 
-void Containers::Example_map() {
+void Containers::ExampleMap() {
     map<int, int> map1;
 
     map1.insert(pair<int, int>(1, 40));
@@ -330,7 +332,7 @@ void Containers::Example_map() {
     return;
 }
 
-void Containers::Example_multiset() {
+void Containers::ExampleMultiset() {
     multiset<int, greater<int>> ms1;
 
     ms1.insert(40);
@@ -361,7 +363,7 @@ void Containers::Example_multiset() {
     return;
 }
 
-void Containers::Example_multimap() {
+void Containers::ExampleMultimap() {
     multimap<int, int> mm1;
 
     mm1.insert(pair<int, int>(1, 40));
@@ -395,7 +397,7 @@ void Containers::Example_multimap() {
     return;
 }
 
-void Containers::Example_stack() {
+void Containers::ExampleStack() {
     stack<int> stack1;
     stack1.push(21);
     stack1.push(22);
@@ -410,7 +412,7 @@ void Containers::Example_stack() {
     return;
 }
 
-void Containers::Example_queue() {
+void Containers::ExampleQueue() {
     queue<int> queue1;
     queue1.push(0);
     queue1.push(1);
@@ -424,7 +426,7 @@ void Containers::Example_queue() {
     return;
 }
 
-void Containers::Example_proirity_queue() {
+void Containers::ExampleProirityQueue() {
     priority_queue<int> pq1;
     pq1.push(10);
     pq1.push(30);
