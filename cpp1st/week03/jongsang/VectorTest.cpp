@@ -33,7 +33,7 @@ void VectorTest::testIterator()
 
     // Normally, iterator is faster than indexing except Vector
 
-    // Iteraotr for int vector
+    // Iterator for int vector
     std::vector<int> intVector = { 1, 2, 3, 4, 5, 6 };
     auto intVecIter = std::begin(intVector);
     for (; intVecIter != std::end(intVector); ++intVecIter)
