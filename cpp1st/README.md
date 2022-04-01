@@ -20,7 +20,7 @@ Here are examples.
 
 | No. | From | To/Meeting | Topic | Leader | Status |
 |---|---|---|---|---|---|
-| 01 | Mar 08 | Mar 14 | Lambda | Jongsang Tack | Done |
+| 01 | Mar 08 | Mar 14 | Lambda <br>- General form of lambda expression<br>- Understanding lambda with function object<br>- Capture by value VS Capture by reference<br>- Generic lambda expression | Jongsang Tack | Done |
 | 02 | Mar 15 | Mar 21 | Template <br>- Kinds of Templates <br>- Template Parameters and Template Arguments <br>- Instantiation and Specialization <br>- Static Polymorphism | Byongmin Park | Done |
 | 03 | Mar 22 | Mar 28 | STL<br>- Containers<br>: sequence containers, associative containers, container adaptors<br>- Algorithms<br>: non-modifying sequence operations, modifying sequence operations, partitioning operations, sorting operations<br>- Utilities<br>: tuples | Taehwan Kim | Done |
 | 04 | Mar 29 | Apr 04 | Smart Pointers, Memory Management | Yongho Kang | In progress |
