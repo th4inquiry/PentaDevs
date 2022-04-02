@@ -159,6 +159,81 @@ position of new container where elements have to be copied (elements returning t
 of new container where other elements have to be copied (elements returning false for condition) and the conditon.
 Resizing new containers is necessary for this function.
 
+##### std:valarray in C++ STL
+C++98 introduced a special container valarray to hold and provide mathematical operations on arrays efficiently.
+* It supports element-wise mathematical operations and various forms of generalized subscript operators, slicing and indirect access.
+* As compare to vectors, valarrays are efficient in certain mathematical operations than vectors also.
+Public member functions in valarray class:
+1. apply() : This function applies the manipulation given in its arguments to all the valarray elements at once 
+and returns a new valarray with manipulated values.
+2. sum() : This function returns the summation of all the elements of valarrays at once.
+3. min() : This function returns the smallest element of valarray.
+4. max() : This function returns the largest element of valarray.
+5. shift() : This function returns the new valarray after shifting elements by the number mentioned in its argument.
+If the number is positive, left-shift is applied, if number is negative, right-shift is applied.
+6.cshift() : This function returns the new valarray after circularly shifting(rotating) elements by the number mentioned in its argument.
+If the number is positive, left-circular shift is applied, if number is negative, right-circular shift is applied.
+7. swap() : This function swaps one valarray with other.
+
+##### Vector in C++ STL
+Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted,
+with their storage being handled automatically by the container. Vector elements are placed in contiguous storage so that
+they can be accessed and traverse using iterators. In vectors, data is inserted at the end. Inserting at the end takes differential time,
+as sometimes there may be a need of extending the array. Removing the last element takes only constant time because no
+resizing happens. Inserting and erasing at the beginning or in the middle is linear in time.
+
+Iterators
+1. begin() : Returns an iterator pointing to the first element in the vector
+2. end() : Returns an iterator pointing to the theoretical element that follows that last element in the vector
+3. rbegin() : Returns a reverse iterator pointing to the last element in the vector (reverse beginning). It moves from last to first element.
+4. rend() : Returns a reverse iterator pointing to the theretical element preceding the first element in the vector (considered as reverse end)
+5. cbegin() : Returns a constant iterator pointing to the first element in the vector.
+6. cend() : Returns a constant iterator pointing to the theoretical element that follows the last element in the vector.
+7. crbegin() : Returns a constant reverse iterator pointing to the last element in the vector (reverse beginning). It moves from last to first element.
+8. crend() : Returns a constant reverse iterator pointing to the theoretical element preceding the first element in the vector (considered as reverse end)
+
+Capacity
+1. size() : Returns the number of elements in the vector
+2. max_size() : Returns the maximum number of elements that the vector can hold.
+3. capacity() : Returns the size of the storage space currently allocated to the vector expressed as number of elements.
+4. resize(n) : Resizes the container so that it contains 'n' elements.
+5. empty() : Returns whether the container is empty.
+6. shrink_to_fit() : Reduces the capacity of the container to fit its size and destroys all element beyond the capacity.
+7. reverse() : Requests that the vector capacity be at least enough to contain n elements.
+
+Elements access
+1. reference operator [g] : Returns a reference to the element at position 'g' in the vector
+2. at(g) : Returns a reference to the element at position 'g' in the vector
+3. front() : Returns a reference to the first element in the vector
+4. back() : Returns a reference to the last element in the vector
+5. data() : Returns a direct pointer to the memory array used internally by the vector to store its owned elements.
+
+Modifiers
+1. assign() : It assigns new value to the vector elements by replacing old ones
+2. push_back() : It push the elements into a vector from the back
+3. pop_back() : It is used to pop or remove elements from a vector from the back
+4. insert() : It inserts new elements before the element at the specified position
+5. erase() : It is used to remove elements from a container from the specified position or range.
+6. swap() : It is used to swap the contents of one vector with another vector of same type. Sizes may differ.
+7. clear() : It is used to remove all the elements of the vector container
+8. emplace() : It extends the container by inserting new element at position
+9. emplace_back() : It is used to insert a new element into the vector container, the new element is added to the end of the vector
+
+##### List in C++ STL
+Lists are sequence containers that allow non-contiguous memory allocation. As compared to vector, the list has slow traversal, but once
+a position has been found, insertion and deletion are quick. Normally, when we say a List, we talk about a doubly linked list.
+For implementing a singly linked list, we use a forward list. Below is the program to show the working of some functions of List:
+
+front() : Returns the value of the first element in the list.
+back() : Returns the value of the last element in the list.
+push_front(g) : Adds a new element 'g' at the beginning of the list.
+push_back(g) : Adds a new element 'g' at the end of the list.
+pop_front() : Removes the first element of the list, and reduces size of the list by 1.
+pop_back() : Removes the last element of the list, and reduces size of the list by 1.
+list::begin() : begin() function returns an iterator pointing to the first element of the list.
+list::end() : end() function returns an iterator pointing to the theoretical last element which follows the last element.
+
+
 ##### Reference
 <https://www.geeksforgeeks.org/the-c-standard-template-library-stl/>
 
@@ -169,3 +244,5 @@ Resizing new containers is necessary for this function.
 <https://www.geeksforgeeks.org/algorithms-library-c-stl/>
 
 <https://www.geeksforgeeks.org/stdpartition-in-c-stl/>
+
+<https://www.geeksforgeeks.org/std-valarray-class-c/>
