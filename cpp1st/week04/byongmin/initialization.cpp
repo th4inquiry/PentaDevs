@@ -24,10 +24,6 @@ private:
 
 int main()
 {
-    // ctor() ? 
-    // copy ctor() ?
-    // move ctro() ?
-    // universal initialization(uniform initialization)
     char c = 'a';
     char c1 ('a');
     char c2 {'a'};
@@ -44,11 +40,6 @@ int main()
     //char *pc3 = new char[2] ('a', 'b');     // not allowed
     //delete[] pc3;
 
-
-    char* myTest = new char[2] {'a', 'b'};
-    delete[] myTest;
-
-
     cout << "---- pointer array ---------------" << endl;
     Person* person = new Person[2] {Person("a"), Person("b")};
     delete[] person;
@@ -62,7 +53,6 @@ int main()
     cout << "---- make_unique -----------" << endl;
     auto p3 = make_unique<Person>("a");
     //auto p4 = make_unique<Person[]>(2);     // array initialization is not allowed
-
 
     return 0;
 }
