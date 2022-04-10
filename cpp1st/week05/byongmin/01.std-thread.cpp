@@ -53,10 +53,6 @@ void callThreadErrorCase(thread &t)
     cat.setAge(3);
 }
 
-void throuExceptionThread()
-{
-    throw runtime_error("error");
-}
 
 int main()
 {
@@ -90,17 +86,6 @@ int main()
     thread t5 {referenceArgThread, std::ref(cat)};
     t5.detach();
 
-
-    cout << "+++ [exception case]" << endl;
-    try
-    {
-        thread t6(throuExceptionThread);
-        t6.join();
-    }
-    catch(exception& e)
-    {
-        cout << "exception is catched : " << e.what() << endl;
-    }
 
     cout << "main ended" << endl;
 
