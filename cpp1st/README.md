@@ -24,13 +24,14 @@ Here are examples.
 | 02 | Mar 15 | Mar 21 | Template <br>- Kinds of Templates <br>- Template Parameters and Template Arguments <br>- Instantiation and Specialization <br>- Static Polymorphism | Byongmin Park | Done |
 | 03 | Mar 22 | Mar 28 | STL<br>- Containers<br>: sequence containers, associative containers, container adaptors<br>- Algorithms<br>: non-modifying sequence operations, modifying sequence operations, partitioning operations, sorting operations<br>- Utilities<br>: tuples | Taehwan Kim | Done |
 | 04 | Mar 29 | Apr 04 | Smart Pointers, Memory Management | Yongho Kang | Done |
-| 05 | Apr 05 | Apr 11 | Concurrency<br> - thread<br>- mutex<br>- memory<br>- future | Hanju Moon | In progress |
-| 06 | | | type deduction, auto, decltype | Taehwan Kim (Prefer) | |
-| 07 | | | compile time function, assertion | | |
-| 08 | | | exception and error handling | Byongmin Park (Prefer) | |
-| 09 | | | l-value, r-value, copy, move | Jongsang Tack (Prefer) | |
-| 10 | | | algorithm | | |
-| 11 | | | overloading and overriding | | |
+| 05 | Apr 05 | Apr 11 | Concurrency<br> - thread<br>- mutex<br>- memory model<br>- _fence_<br>- _future_ | Hanju Moon | Done |
+| - | Apr 12| Apr 18 | Break | | In progress |
+| 06 | Apr 19 | Apr 25 | type deduction, auto, decltype | Taehwan Kim | |
+| 07 | Apr 26 | May 02 | compile time function, assertion | Yongho Kang | |
+| 08 | May 03 | May 09 | exception and error handling | Byongmin Park | |
+| 09 | May 10 | May 16 | l-value, r-value, copy, move | Jongsang Tack | |
+| 10 | May 17 | May 23 | algorithm | Hanju Moon | |
+| 11 | May 24 | May 30 | overloading and overriding, object oriented design | Taehwan Kim| |
 
 
 ## Topic backlog
