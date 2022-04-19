@@ -25,8 +25,8 @@ Here are examples.
 | 03 | Mar 22 | Mar 28 | STL<br>- Containers<br>: sequence containers, associative containers, container adaptors<br>- Algorithms<br>: non-modifying sequence operations, modifying sequence operations, partitioning operations, sorting operations<br>- Utilities<br>: tuples | Taehwan Kim | Done |
 | 04 | Mar 29 | Apr 04 | Smart Pointers, Memory Management | Yongho Kang | Done |
 | 05 | Apr 05 | Apr 11 | Concurrency<br> - thread<br>- mutex<br>- memory model<br>- _fence_<br>- _future_ | Hanju Moon | Done |
-| - | Apr 12| Apr 18 | Break | | In progress |
-| 06 | Apr 19 | Apr 25 | type deduction, auto, decltype | Taehwan Kim | |
+| - | Apr 12| Apr 18 | Break | | Done |
+| 06 | Apr 19 | Apr 25 | type deduction, auto, decltype | Taehwan Kim | In progress |
 | 07 | Apr 26 | May 02 | compile time function, assertion | Yongho Kang | |
 | 08 | May 03 | May 09 | exception and error handling | Byongmin Park | |
 | 09 | May 10 | May 16 | l-value, r-value, copy, move | Jongsang Tack | |
