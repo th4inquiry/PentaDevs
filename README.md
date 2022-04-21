@@ -44,4 +44,4 @@ Members are Hanju Moon, Byongmin Park, Jongsang Tack, Taehwan Kim and Yongho Kan
 | Contents | Duration |
 |---|---|
 | [Prerequisites](devs/Prerequisites.md) | Anytime |
-| [The first step](cpp1st/README.md) | Mar 08, 2022 ~ MMM DD, 2022 |
+| [The first step](cpp1st/README.md) | Mar 08, 2022 ~ May 30, 2022 |
