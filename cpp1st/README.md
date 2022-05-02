@@ -23,11 +23,11 @@ Here are examples.
 | 01 | Mar 08 | Mar 14 | Lambda <br>- General form of lambda expression<br>- Understanding lambda with function object<br>- Capture by value VS Capture by reference<br>- Generic lambda expression | Jongsang Tack | Done |
 | 02 | Mar 15 | Mar 21 | Template <br>- Kinds of Templates <br>- Template Parameters and Template Arguments <br>- Instantiation and Specialization <br>- Static Polymorphism | Byongmin Park | Done |
 | 03 | Mar 22 | Mar 28 | STL<br>- Containers<br>: sequence containers, associative containers, container adaptors<br>- Algorithms<br>: non-modifying sequence operations, modifying sequence operations, partitioning operations, sorting operations<br>- Utilities<br>: tuples | Taehwan Kim | Done |
-| 04 | Mar 29 | Apr 04 | Smart Pointers, Memory Management | Yongho Kang | Done |
+| 04 | Mar 29 | Apr 04 | Smart Pointers, Memory Management<br>- Ownership<br>- unique_ptr<br>- shared_ptr<br>- weak_ptr | Yongho Kang | Done |
 | 05 | Apr 05 | Apr 11 | Concurrency<br> - thread<br>- mutex<br>- memory model<br>- _fence_<br>- _future_ | Hanju Moon | Done |
 | - | Apr 12| Apr 18 | Break | | Done |
 | 06 | Apr 19 | Apr 25 | Type deduction<br> - Template type deduction<br>- ```auto``` type deduction<br>- Lambda capture type deduction<br>- ```decltype``` type deduction<br>- Function Return type deduction<br> | Taehwan Kim | Done |
-| 07 | Apr 26 | May 02 | compile time function, assertion | Yongho Kang | |
+| 07 | Apr 26 | May 02 | compile time function, assertion<br>- constexpr<br>- const<br>- static_assert<br>- abort | Yongho Kang | Done |
 | 08 | May 03 | May 09 | exception and error handling | Byongmin Park | |
 | 09 | May 10 | May 16 | l-value, r-value, copy, move | Jongsang Tack | |
 | 10 | May 17 | May 23 | algorithm | Hanju Moon | |
