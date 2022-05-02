@@ -27,7 +27,7 @@ Here are examples.
 | 05 | Apr 05 | Apr 11 | Concurrency<br> - thread<br>- mutex<br>- memory model<br>- _fence_<br>- _future_ | Hanju Moon | Done |
 | - | Apr 12| Apr 18 | Break | | Done |
 | 06 | Apr 19 | Apr 25 | Type deduction<br> - Template type deduction<br>- ```auto``` type deduction<br>- Lambda capture type deduction<br>- ```decltype``` type deduction<br>- Function Return type deduction<br> | Taehwan Kim | Done |
-| 07 | Apr 26 | May 02 | compile time function, assertion<br>- constexpr<br>- const<br>- static_assert<br>- abort | Yongho Kang | Done |
+| 07 | Apr 26 | May 02 | compile time function, assertion<br>- constexpr<br>- static_assert<br>- abort | Yongho Kang | Done |
 | 08 | May 03 | May 09 | exception and error handling | Byongmin Park | |
 | 09 | May 10 | May 16 | l-value, r-value, copy, move | Jongsang Tack | |
 | 10 | May 17 | May 23 | algorithm | Hanju Moon | |
