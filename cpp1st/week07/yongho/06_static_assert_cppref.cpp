@@ -2,7 +2,9 @@
 #include <iostream>
 #include <type_traits>
 
-static_assert(03301 == 1729); //since C++17 the message string is optional
+//since C++17 the message string is optional
+static_assert(03301 == 1729, "03301 != 1730");
+static_assert(03301 == 1729); 
 
 template <class T>
 void swap(T& a, T& b) noexcept
@@ -41,10 +43,11 @@ int main()
     //std::cout << "a = " << a << ", b=" << b << std::endl;
 
     no_copy nc_a, nc_b;
-    swap(nc_a, nc_b);   //"copy constructor" was deleted in 'no_copy' struct, so 'is_copy_constructible' return false.
+    //swap(nc_a, nc_b);   //"copy constructor" was deleted in 'no_copy' struct, so 'is_copy_constructible' return false.
                         //"delete move constructor" and "move assignment operator" was not implicitly created, 
                         //so 'is_nothrow_move_constructible' and 'is_nothrow_move_assignable' are resturn false.
 
+    //Suppresses warnings on unused entities.
     [[maybe_unused]] data_structure<int> ds_ok;
     [[maybe_unused]] data_structure<no_default> ds_error; //"default constructor" was deleted in 'no_default' struct, so 'is_default_constructible' return false.
 }

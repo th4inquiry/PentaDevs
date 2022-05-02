@@ -1,3 +1,4 @@
+//abort sample code
 #include <csignal>
 #include <iostream>
 #include <cstdlib>

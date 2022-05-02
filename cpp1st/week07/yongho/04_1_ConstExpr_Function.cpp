@@ -1,4 +1,5 @@
 //This program calculates the greates common divisor or two numbers
+// Execute as 'constexpr function' and 'normal function'
 #include <iostream>
 
 constexpr auto gcd(int a, int b)

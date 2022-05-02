@@ -55,7 +55,7 @@ class array {
 
 <b>Two type of constant</b>
 
-* listeral type
+* literal type
     * void, scalar type, reference type, an array of literal type, class type that has all of the following properties
     ```C++
     bool isChanged = true; //bool literal 'true'
@@ -203,7 +203,7 @@ constexpr int product(int x, int y)
 
 int main()
 {
-    contexpr int x = product(10, 20);
+    constexpr int x = product(10, 20);
     cout << x;
     return 0;
 }

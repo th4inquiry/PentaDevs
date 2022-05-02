@@ -1,16 +1,6 @@
 # Assert
 
-In c++, preprocessing directive such as #error and macros such as assert could be used for assertion processing.
-
-An invariant that must be maintained during the program can be verified using assert.
-
-* C:<assert.h>
-* C++:<cassert>
-* void assert (int expression)
-
-Precompile header
-* Debug : _DEBUG (enable assert)
-* Release : NDEBUG (ignore assert)
+In c++, preprocessor indicators such as #error and macros such as asser could be processed.
 
 ### <b>Understanding static_assert in C++11</b>
 
@@ -174,7 +164,7 @@ int main()
 ```C++
 //CPP program to illustrate
 //declaring static_assert in block scope
-tempate <typename T, int N>
+template <typename T, int N>
 void f()
 {
     static_assert(N >=0, "length of array a is negative.");

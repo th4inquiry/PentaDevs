@@ -46,11 +46,11 @@ int main()
     //foo is const;
     constexpr Foo foo(5);
     std::cout << "The value of foo is " << foo.GetValue() << std::endl;
-    //foo = Foo(6); //Error!
+    //foo = Foo(6); //Error! No copy operator
 
     //Compile time:
     constexpr float x = exp(5, 3);
-    constexpr float y { exp(2,5)};
+    constexpr float y {exp(2,5)};
     constexpr int val = foo.GetValue();
     constexpr int f5 = fac(5);
     const int nums[] {1,2,3,4};
