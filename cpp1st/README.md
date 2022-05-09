@@ -28,7 +28,7 @@ Here are examples.
 | - | Apr 12| Apr 18 | Break | | Done |
 | 06 | Apr 19 | Apr 25 | Type deduction<br> - Template type deduction<br>- ```auto``` type deduction<br>- Lambda capture type deduction<br>- ```decltype``` type deduction<br>- Function Return type deduction<br> | Taehwan Kim | Done |
 | 07 | Apr 26 | May 02 | compile time function, assertion<br>- constexpr<br>- static_assert<br>- abort | Yongho Kang | Done |
-| 08 | May 03 | May 09 | exception and error handling | Byongmin Park | |
+| 08 | May 03 | May 09 | exception and error handling<br>- Design for exception safety<br> : Basic techniques<br> : The three exception guarantees<br> : Exception-safe classes | Byongmin Park | Done |
 | 09 | May 10 | May 16 | l-value, r-value, copy, move | Jongsang Tack | |
 | 10 | May 17 | May 23 | algorithm | Hanju Moon | |
 | 11 | May 24 | May 30 | overloading and overriding, object oriented design | Taehwan Kim| |
