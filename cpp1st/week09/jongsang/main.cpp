@@ -170,8 +170,9 @@ void testStdForward()
 
 void testStdMove()
 {
+    std::cout << "\n\n###### " << __FUNCTION__ << " #####\n" << std::endl;
     //template <class _Ty>
-    //_NODISCARD constexpr remove_reference_t<_Ty>&& move(_Ty && _Arg) noexcept { // forward _Arg as movable
+    //_NODISCARD constexpr remove_reference_t<_Ty>&& move(_Ty&& _Arg) noexcept { // forward _Arg as movable
     //    return static_cast<remove_reference_t<_Ty>&&>(_Arg);
     //}
 
@@ -188,6 +189,21 @@ void testStdMove()
 
 }
 
+Person createPerson(Person& person)
+{
+    auto ret = person;
+    return ret;
+}
+
+void testReturnValue()
+{
+    std::cout << "\n\n###### " << __FUNCTION__ << " #####\n" << std::endl;
+
+    Person per{ L"return value", 0 };
+    auto person = createPerson(per);
+
+}
+
 int main()
 {
     testRvalueReference();
@@ -197,5 +213,6 @@ int main()
     testStdForward();
     testCppRefMoveCon();
     testCppRefMoveAss();
+    testReturnValue();
 }
 
