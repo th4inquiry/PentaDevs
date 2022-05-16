@@ -20,6 +20,32 @@ An ```lvalue``` is a glvalue that is not an xvalue.<br>
 An ```rvalue``` is a prvalue or an xvalue.<br>
 <br>
 
+### Example of lvalue and rvalue
+```cpp
+// lvalues_and_rvalues2.cpp
+int main()
+{
+    int i, j, *p;
+
+    // Correct usage: the variable i is an lvalue and the literal 7 is a prvalue.
+    i = 7;
+
+    // Incorrect usage: The left operand must be an lvalue (C2106).`j * 4` is a prvalue.
+    7 = i; // C2106
+    j * 4 = 7; // C2106
+
+    // Correct usage: the dereferenced pointer is an lvalue.
+    *p = i;
+
+    // Correct usage: the conditional operator returns an lvalue.
+    ((i < 3) ? i : j) = 7;
+
+    // Incorrect usage: the constant ci is a non-modifiable lvalue (C3892).
+    const int ci = 7;
+    ci = 9; // C3892
+}
+```
+
 ### Example of xvalue (C++ Standard $7.2.1)
 *In general, the effect of this rule is that __named rvalue references__ are treated as __lvalues__ and __unnamed rvalue references__
 to objects are treated as __xvalues__; rvalue references to functions are treated as lvalues whether named or not.*
