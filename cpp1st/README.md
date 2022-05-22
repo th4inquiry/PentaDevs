@@ -25,13 +25,15 @@ Here are examples.
 | 03 | Mar 22 | Mar 28 | STL<br>- Containers<br>: sequence containers, associative containers, container adaptors<br>- Algorithms<br>: non-modifying sequence operations, modifying sequence operations, partitioning operations, sorting operations<br>- Utilities<br>: tuples | Taehwan Kim | Done |
 | 04 | Mar 29 | Apr 04 | Smart Pointers, Memory Management<br>- Ownership<br>- unique_ptr<br>- shared_ptr<br>- weak_ptr | Yongho Kang | Done |
 | 05 | Apr 05 | Apr 11 | Concurrency<br> - thread<br>- mutex<br>- memory model<br>- _fence_<br>- _future_ | Hanju Moon | Done |
-| - | Apr 12| Apr 18 | Break | | Done |
+| - | Apr 12 | Apr 18 | Break | | Done |
 | 06 | Apr 19 | Apr 25 | Type deduction<br> - Template type deduction<br>- ```auto``` type deduction<br>- Lambda capture type deduction<br>- ```decltype``` type deduction<br>- Function Return type deduction<br> | Taehwan Kim | Done |
 | 07 | Apr 26 | May 02 | compile time function, assertion<br>- constexpr<br>- static_assert<br>- abort | Yongho Kang | Done |
 | 08 | May 03 | May 09 | exception and error handling<br>- Design for exception safety<br> : Basic techniques<br> : The three exception guarantees<br> : Exception-safe classes | Byongmin Park | Done |
 | 09 | May 10 | May 16 | l-value, r-value, copy, move<br>- Value category<br>- Move semantics(Rvalue reference, Move constructor/assignment operator)<br>- std::move<br>- Forwarding reference(Universal reference)<br>- Perfect forwarding | Jongsang Tack | Done |
-| 10 | May 17 | May 23 | algorithm | Hanju Moon | |
-| 11 | May 24 | May 30 | overloading and overriding, object oriented design | Taehwan Kim| |
+| - | May 17 | May 23 | Catch up | | |
+| 10 | May 24 | May 30 | algorithm | Hanju Moon | |
+| - | May 31 | Jun 06 | National Holiday | | |
+| 11 | May 07 | Jun 13 | overloading and overriding, object oriented design | Taehwan Kim| |
 
 
 ## Topic backlog
