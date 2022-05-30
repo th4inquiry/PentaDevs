@@ -135,7 +135,7 @@ int main()
 
 # [Sorting] std::nth_elemnet
 
-![alt text](.\resources\nthelement.png "std::nth_element")
+![alt text](.\nthelement.png "std::nth_element")
 
 ## Example
 ```cpp
@@ -194,7 +194,7 @@ The comparisons of individual elements are performed using either operator< for 
 
 __If the function can determine the next higher permutation, it rearranges the elements as such and returns ```true```. If that was not possible (because it is already at the largest possible permutation), it rearranges the elements according to the first permutation (sorted in ascending order) and returns ```false```.__
 
-![alt text](.\resources\permutation.png "permutation")
+![alt text](.\permutation.png "permutation")
 
 ## Example
 ```cpp
