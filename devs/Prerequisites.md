@@ -24,3 +24,7 @@
   - The Most Important Design Guideline?, IEEE Software, July/August 2004
     - [Revised Paper](https://www.aristeia.com/Papers/IEEE_Software_JulAug_2004_revised.htm)
 
+# Library
+## GSL: Guidelines Support Library
+- [GSL: Guidelines support library](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#gsl-guidelines-support-library): C++ Core Guidelines
+- [GSL: Guidelines Support Library](https://github.com/Microsoft/GSL): GitHub

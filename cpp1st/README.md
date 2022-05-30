@@ -1,6 +1,6 @@
 # The 1st step
 
-Back to the basics.
+Back to the basics. C++11/14. C++17/20 if we can.
 
 ## Folder structure
 
@@ -31,7 +31,7 @@ Here are examples.
 | 08 | May 03 | May 09 | exception and error handling<br>- Design for exception safety<br> : Basic techniques<br> : The three exception guarantees<br> : Exception-safe classes | Byongmin Park | Done |
 | 09 | May 10 | May 16 | l-value, r-value, copy, move<br>- Value category<br>- Move semantics(Rvalue reference, Move constructor/assignment operator)<br>- std::move<br>- Forwarding reference(Universal reference)<br>- Perfect forwarding | Jongsang Tack | Done |
 | - | May 17 | May 23 | Catch up | | |
-| 10 | May 24 | May 30 | algorithm | Hanju Moon | |
+| 10 | May 24 | May 30 | Algorithm<br>- Definition and types<br>- Standard library<br>- Complexity<br>- C++ Core Guidelines<br>Not covered<br>- Parallelism | Hanju Moon | Done |
 | - | May 31 | Jun 06 | National Holiday | | |
 | 11 | May 07 | Jun 13 | overloading and overriding, object oriented design | Taehwan Kim| |
 
