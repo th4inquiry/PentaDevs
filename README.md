@@ -45,3 +45,4 @@ Members are Hanju Moon, Byongmin Park, Jongsang Tack, Taehwan Kim and Yongho Kan
 |---|---|
 | [Prerequisites](devs/Prerequisites.md) | Anytime |
 | [The first step](cpp1st/README.md) | Mar 08, 2022 ~ Jun 13, 2022 |
+| [The second step](cpp2nd/README.md) | ? |
