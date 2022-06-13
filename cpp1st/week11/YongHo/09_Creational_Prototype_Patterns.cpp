@@ -23,7 +23,7 @@ class CarRecord : public Record
         std::string car_Name;
         int car_Id;
     public:
-        CarRecord(string carName, int Id) : car_Name(carName), car_Id(Id)
+        CarRecord(std::string carName, int Id) : car_Name(carName), car_Id(Id)
         {            
         }
 
@@ -58,7 +58,7 @@ class BikeRecord : public Record
                         << "Number : " << bike_id << std::endl;
         }
 
-        std::unique_ptr<BikeRecord> clone() override
+        std::unique_ptr<Record> clone() override
         {
             return std::make_unique<BikeRecord>(*this);
         }
@@ -82,7 +82,7 @@ class PersonRecord : public Record
                         << "Number : " << person_Age << std::endl;
         }
 
-        std::unique_ptr<PersonRecord> clone() override
+        std::unique_ptr<Record> clone() override
         {
             return std::make_unique<PersonRecord>(*this);
         }
