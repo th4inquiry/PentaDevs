@@ -33,7 +33,7 @@ Here are examples.
 | - | May 17 | May 23 | Catch up | | |
 | 10 | May 24 | May 30 | Algorithm<br>- Definition and types<br>- Standard library<br>- Complexity<br>- C++ Core Guidelines<br>Not covered<br>- Parallelism | Hanju Moon | Done |
 | - | May 31 | Jun 06 | National Holiday | | |
-| 11 | May 07 | Jun 13 | overloading and overriding, object oriented design | Taehwan Kim| |
+| 11 | May 07 | Jun 13 | Overloading and Overriding, Object Oriented Programming<br>- Encapsulation, Abstraction, Inheritance, Polymorphism<br>- Message Passing, Dynamic Binding | Taehwan Kim| Done |
 
 
 ## Topic backlog
