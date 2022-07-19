@@ -1,11 +1,16 @@
 # The 2nd step
 
+## Plan
 | No. | From | To/Meeting | Topic | Leader | Status |
 |---|---|---|---|---|---|
-| 01 | Jul 05 | Jul 11 | Modern C++ code review | All | Planned |
-| 02 | Jul 05 | Jul 18 | Coroutines | Hanju Moon | Planned |
-| 03 | Jul 19 | Jul 25 | Modern C++ code review | All | Planned |
-| 04 | Jul 19 | Aug 01 | span class, bit header, bitset class | Taehwan Kim | Planned |
+| 01 | Jul 05 | Jul 12 | Modern C++ code review | All | Done |
+| 02 | Jul 13 | Jul 19 | Coroutines | Hanju Moon | Done |
+| 03 | Jul 20 | Jul 27 | Modern C++ code review | All | Planned |
+| 04 | Jul 28 | Aug 10 | span class, bit header, bitset class | Taehwan Kim | Planned |
+
+To be updated
+| No. | From | To/Meeting | Topic | Leader | Status |
+|---|---|---|---|---|---|
 | 05 | Aug 02 | Aug 08 | Modern C++ code review | All | Planned |
 | 06 | Aug 02 | Aug 15 | Concepts | Yongho Kang | Planned |
 | 07 | Aug 16 | Aug 22 | Modern C++ code review | All | Planned |
