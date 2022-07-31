@@ -5,8 +5,8 @@
 |---|---|---|---|---|---|
 | 01 | Jul 05 | Jul 12 | Modern C++ code review | All | Done |
 | 02 | Jul 13 | Jul 19 | Coroutines | Hanju Moon | Done |
-| 03 | Jul 20 | Jul 27 | Modern C++ code review | All | Planned |
-| 04 | Jul 28 | Aug 10 | span class, bit header, bitset class | Taehwan Kim | Planned |
+| 03 | Jul 20 | Jul 27 | Modern C++ code review | All | Done |
+| 04 | Jul 28 | Aug 10 | span class, bit header, bitset class | Taehwan Kim | In progress |
 
 To be updated
 | No. | From | To/Meeting | Topic | Leader | Status |
