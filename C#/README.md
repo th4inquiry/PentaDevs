@@ -11,10 +11,10 @@
 
 | No. | From | To/Meeting | Topic | Leader | Status |
 |---|---|---|---|---|---|
-| 01 | Sep 27 | Oct 12 | Program structure | Taehwan Kim | To do |
-| 02 | Sep 27 | Oct 12 | Type system | Yongho Kang | To do |
-| 03 | Sep 27 | Oct 12 | Object-oriented programming | JongSang Tack | To do |
-| 04 | Oct 13 | TBU | Functional techniques | Byongmin Park | To do |
+| 01 | Sep 27 | Oct 12 | Program structure | Taehwan Kim | Done |
+| 02 | Sep 27 | Oct 12, 17 | Type system | Yongho Kang | In progress |
+| 03 | Sep 27 | Oct 17 | Object-oriented programming | JongSang Tack | To do |
+| 04 | Oct 13 | Oct 17 | Functional techniques | Byongmin Park | To do |
 | 05 | Oct 13 | TBU | Exceptions and errors | Hanju Moon | To do |
 | 06 | Oct 13 | TBU | Coding style | Hyunjung Jang | To do |
 
