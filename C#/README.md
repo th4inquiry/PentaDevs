@@ -16,7 +16,7 @@
 | 03 | Sep 27 | Oct 19, 26 | Object-oriented programming | JongSang Tack | In progress |
 | 04 | Oct 13 | Oct 26 | Functional techniques | Byongmin Park | To do |
 | 05 | Oct 13 | Oct 26 | Coding style | Hyunjung Jang | To do |
-| 06 | Oct 13 | Oct 26 | Exceptions and errors | Hanju Moon | To do |
+| 06 | Oct 13 | Oct 26 | Exceptions and errors | Taehwan Kim | To do |
 
 ## Idea
 
