@@ -13,10 +13,10 @@
 |---|---|---|---|---|---|
 | 01 | Sep 27 | Oct 12 | Program structure | Taehwan Kim | Done |
 | 02 | Sep 27 | Oct 12, 19 | Type system | Yongho Kang | Done |
-| 03 | Sep 27 | Oct 19, 26 | Object-oriented programming | JongSang Tack | In progress |
-| 04 | Oct 13 | Oct 26 | Functional techniques | Byongmin Park | To do |
-| 05 | Oct 13 | Oct 26 | Coding style | Hyunjung Jang | To do |
-| 06 | Oct 13 | Oct 26 | Exceptions and errors | Taehwan Kim | To do |
+| 03 | Sep 27 | Oct 19, 26 | Object-oriented programming | JongSang Tack | Done |
+| 04 | Oct 13 | Oct 26, Nov 02 | Functional techniques | Byongmin Park | Done |
+| 05 | Oct 13 | Nov 02, 09 | Coding style | Hyunjung Jang | In progress |
+| 06 | Oct 13 | Nov 09 | Exceptions and errors | Taehwan Kim | To do |
 
 ## Idea
 
