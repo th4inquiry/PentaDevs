@@ -28,8 +28,7 @@ Members are Hanju Moon, Byongmin Park, Jongsang Tack, Taehwan Kim, Yongho Kang a
 1. Kick-off: 2022-03-07
 1. First step: Fundamentals, 3 months
 1. Second step: C++20 & Modern C++ code review, 3 months
-1. Third step: C#, 3 months
-1. Fourth step: TBD (tech-pub or project, 3 months)
+1. Third step: C# fundamental & C# 1.0 ~ 8.0, 4 months
 
 # Folder structure
 
