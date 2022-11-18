@@ -13,6 +13,9 @@ Attributes
 # Classes
 Refer to [Classes](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/classes)
 <br>
+<br>
+<br>
+<br>
 
 # Structs
 - Inherites ```System.Object```
@@ -70,10 +73,35 @@ Refer to [Classes](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/
     }
 ```
 <br>
+<br>
+<br>
+<br>
 
 # Interfaces
 Interface is defined as ```Contract```.  
+Any ```class``` or ```struct``` that implements that ```contract``` must provide an implementation of the members defined in the interface.
 
+- Can be a member of a namespace or a class
+- Can contain declarations (signature without any implementation) of the following members
+  - Methods
+  - Properties
+  - Indexers
+  - Events
+- Can inherit from one or more base interfaces
+  - A class can inherit a base class and also implement one or more interfaces
+  - When an interface overrides a method implemented in a base interface, it must use the [explicit interface implementation](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/explicit-interface-implementation) syntax
+- Can't be instantiated directly. Its members are implemented by any class or struct that implements the interface
+<br>
+
+References
+  - [interface (C# Reference)](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface)
+  - [Interfaces - define behavior for multiple types](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/interfaces)
+<br>
+<br>
+
+
+
+## Syntax
 interface can be defined as the below.
 ```c#
 access_modifier interface interface_name  
@@ -82,15 +110,93 @@ access_modifier interface interface_name
 }  
 // access modifier => public or internal(default)
 ```
+<br>
+<br>
 
 
-Refer to [Interfaces, Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/interfaces)
+## Explicit interface implementation
+If a class implements ```two interfaces``` that contain a member with ```the same signature```, then implementing that member on the class will cause both interfaces to use that member as their implementation.
+
+```c#
+public interface IControl
+{
+    void Paint();
+}
+public interface ISurface
+{
+    void Paint();
+}
+public class SampleClass : IControl, ISurface
+{
+    // Both ISurface.Paint and IControl.Paint call this method.
+    public void Paint()
+    {
+        Console.WriteLine("Paint method in SampleClass");
+    }
+}
+...
+
+SampleClass sample = new SampleClass();
+IControl control = sample;
+ISurface surface = sample;
+
+// The following lines all call the same method.
+sample.Paint();
+control.Paint();
+surface.Paint();
+
+// Output:
+// Paint method in SampleClass
+// Paint method in SampleClass
+// Paint method in SampleClass
+```
+
+### Solution
+To call a different implementation depending on which interface is in use, you can ```implement an interface member explicitly```.  
+An explicit interface implementation is a class member that is ```only called through the specified interface```.
+
+```c#
+public class SampleClass : IControl, ISurface
+{
+    void IControl.Paint()
+    {
+        System.Console.WriteLine("IControl.Paint");
+    }
+    void ISurface.Paint()
+    {
+        System.Console.WriteLine("ISurface.Paint");
+    }
+}
+...
+SampleClass sample = new SampleClass();
+IControl control = sample;
+ISurface surface = sample;
+
+// The following lines all call the same method.
+//sample.Paint(); // Compiler error.
+control.Paint();  // Calls IControl.Paint on SampleClass.
+surface.Paint();  // Calls ISurface.Paint on SampleClass.
+
+// Output:
+// IControl.Paint
+// ISurface.Paint
+```
+- ```An explicit interface``` implementation does ```not have an access modifier``` since it is not accessible as a member of the type it's defined.
+- It's only accessible when called through an instance of the interface
+<br>
+
+References
+- [Explict Interface Implementation(C# Programming Guide), Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/explicit-interface-implementation)
+<br>
+<br>
+
 
 ## Interface Access Modifiers
 Refer to [Interface Access Modifiers](https://www.techpointfunda.com/2020/08/interface-access-modifiers-csharp.html) (including C# 8.0)
 <br>
+<br>
 
-## Example source code
+## Example
 ```c#
 public interface IInterfaceTest
 {
@@ -160,11 +266,25 @@ static void TestInterface()
 // DefaultInterface is called
 // PublicMethod is called
 ```
+<br>
+<br>
+<br>
+<br>
 
 # Delegate
 A ```delegate``` is a type that represents references to methods with a particular parameter list and return type.
+- Delegates are similar to C++ function pointers, but delegates are fully object-oriented, and unlike C++ pointers to member functions, delegates ```encapsulate both an object instance and a method```.
+- Delegates allow methods to be passed as parameters.
+- Delegates can be used to define callback methods.
+- Delegates can be chained together; for example, multiple methods can be called on a single event.
+- Methods don't have to match the delegate type exactly. For more information, see Using Variance in Delegates.
+
+References
+- [Delegates(C# Programming Guide)](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/)
 <br>
 <br>
+
+## Syntax
 ```delegate``` can be declared as the below.
 
 ```c#
@@ -238,11 +358,44 @@ calc = Disk.CalcDelegate.Combine(calc, calcDiv) as Disk.CalcDelegate;
 
 calc(10, 5);
 ```
+<br>
+<br>
+<br>
 
+# Events
+```Events``` are, like delegates, a *```late binding```* mechanism. 
+In fact, events are built on the language support for delegates.
+- Events are a way for an object to broadcast that something has happened.
+- Subscribing to an event also ```creates a coupling``` between two objects (the event source, and the event sink). You need to ensure that the event sink unsubscribes from the event source when no longer interested in events.
+<br>
 
+<p align="center">
+<img src="Event_Publisher_Subscriber.jpg" alt= "Event publisher & subscriber" style="height: 400px;"/>
+</p>
 
+References
+- [Introduction to events, Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/events-overview)
+- [C# - Events, TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-event)
 
+<br>
+<br>
 
+## Design goals for event support
+- Enable ```very minimal coupling``` between an event source and an event sink. These two components may not be written by the same organization, and may even be updated on totally different schedules.
+- It should be very simple to subscribe to an event, and to unsubscribe from that same event.
+- Event sources should support multiple event subscribers. It should also support having no event subscribers attached.
+<br>
+<br>
+
+## Syntax
+The event can be declared as the below.
+
+```c#
+class class_name
+{
+    access_modifier event EventHandler identifier;
+}
+```
 
 
 
