@@ -3,6 +3,8 @@
     using ClassExample;
     using StructExample;
     using InterfaceExample;
+    using StatementExample;
+    using GenericsExample;
 
     class ProgramExecutable
     {
@@ -11,6 +13,8 @@
             var example1 = new TestClass();
             var example2 = new TestStruct();
             var example3 = new TestInterface();
+            var example4 = new TestStatement();
+            var example5 = new TestGenerics();
         }
     }
 }
