@@ -18,7 +18,7 @@ Refer to [Classes](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/
 <br>
 
 # Structs
-- Inherites ```System.Object```
+- Inherited from ```System.Object```
 - value type
 - Can be instantiated with ```new``` or without it
 - Can not declare the ```default constructor``` explicitly
@@ -113,7 +113,6 @@ access_modifier interface interface_name
 <br>
 <br>
 
-
 ## Explicit interface implementation
 If a class implements ```two interfaces``` that contain a member with ```the same signature```, then implementing that member on the class will cause both interfaces to use that member as their implementation.
 
@@ -150,6 +149,10 @@ surface.Paint();
 // Paint method in SampleClass
 // Paint method in SampleClass
 ```
+<br>
+
+
+
 
 ### Solution
 To call a different implementation depending on which interface is in use, you can ```implement an interface member explicitly```.  
@@ -358,6 +361,8 @@ calc = Disk.CalcDelegate.Combine(calc, calcDiv) as Disk.CalcDelegate;
 
 calc(10, 5);
 ```
+References
+- 시작하세요! C# 9.0 프로그래밍, 정성태
 <br>
 <br>
 <br>
@@ -375,6 +380,7 @@ In fact, events are built on the language support for delegates.
 
 References
 - [Introduction to events, Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/events-overview)
+- [event (C# reference), Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/event)
 - [C# - Events, TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-event)
 
 <br>
@@ -393,21 +399,372 @@ The event can be declared as the below.
 ```c#
 class class_name
 {
-    access_modifier event EventHandler identifier;
+    access_modifier event delegate_type identifier;
+}
+```
+<br>
+<br>
+
+## Event example
+Refer to [C# - Events, TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-event)
+<br>
+<br>
+
+## Event VS Delegate
+- What is the role of ```event``` keyword?
+    - Instanticates the instance by itself unlike ```delegate```
+    - Provides the functionality of adding and removing callback methods easily
+    <br>
+    <br>
+
+    ### Example code for understanding ```event``` keyword comparing to ```delegate```
+    ```c#
+    // =========== Using Delegater ============
+    class PrimeGenerator
+    {
+        // Declare delegate type for callback
+        public delegate void PrimeDelegate(object sender, EventArgs args);
+
+        // Declare delegate instance for callback methods
+        PrimeDelegate callbacks;
+
+        // Add callback method
+        public void AddDelegate(PrimeDelegate callback)
+        {
+            callbacks += callback;
+        }
+
+        // Remove callback method
+        public void RemoveDelegate(PrimeDelegate callback)
+        {
+            callbacks -= callback;
+        }
+
+        ...
+    }
+    ...
+
+    class Program
+    {
+        static void PrintPrime(object sender, EventArgs args)
+        {
+            // Print prime
+        }
+
+        static void SumPrime(object sender, EventArgs args)
+        {
+            // Sum prime 
+        }
+
+        static void Main(string[] args)
+        {
+            PrimeGenerator gen = new PrimeGenerator();
+
+            PrimeGenerator.PrimeDelegate callprint = PrintPrime;
+            gen.AddDelegate(PrintPrime);
+
+            PrimeGenerator.PrimeDelegate callsum = SumPrime;
+            gen.AddDelegate(SumPrime);
+            
+            ...
+        }
+    }
+
+    // =========== Using event keyword ===========
+    class PrimeGenerator
+    {
+        public event EventHandler PrimeGenerated;
+    }
+
+    class Program
+    {
+        static void PrintPrime(object sender, EventArgs args)
+        {
+            // Print prime
+        }
+
+        static void SumPrime(object sender, EventArgs args)
+        {
+            // Sum prime 
+        }
+
+        static void Main(string[] args)
+        {
+            PrimeGenerator gen = new PrimeGenerator();
+
+            gen.PrimeGenerator += PrintPrime;
+            gen.PrimeGenerator += SumPrime;
+
+            ...
+
+        }
+    }
+
+    ```
+
+- What does ```EventHandler``` type mean?
+    - Specific type of ```delegate```
+    References
+    - [EventHandler Delegate, Microsoft](https://learn.microsoft.com/en-us/dotnet/api/system.eventhandler?view=net-7.0)
+<br>
+<br>
+
+    ### Declaration of EventHandler
+    ```c#
+    namespace System
+    {
+        //
+        // Summary:
+        //     Represents the method that will handle an event that has no event data.
+        //
+        // Parameters:
+        //   sender:
+        //     The source of the event.
+        //
+        //   e:
+        //     An object that contains no event data.
+        public delegate void EventHandler(object? sender, EventArgs e);
+    }
+    ```
+<br>
+<br>
+<br>
+
+
+# Metadata
+## Background
+- In the past, a software component (.exe or .dll) that was written in one language ```could not easily use a software component``` that was written in another language.  
+- ```.NET``` makes component interoperation even easier by allowing compilers to emit ```additional declarative information``` into all modules and assemblies. This information, called ```metadata```, helps components to interact seamlessly.
+<br>
+<br>
+
+## Definition
+Metadata is ```binary information describing your program``` that is stored either in a common language runtime portable executable (PE) file or in memory. 
+1. You compile your code into a PE(Portable Executable) file
+2. Metadata is inserted into one portion of the file
+3. Your code is converted to ```MSIL(Microsoft Intermediate Language)``` and inserted into another portion of the file
+4. Every type and memeber that is defined and referenced in a module or assembly is described within metadata
+5. When code is executed, the runttime loads metadata into memory and references it to discover information about your code's classes, members, inheritance, and so on
+<br>
+<br>
+
+<figure align="left">
+    <img src="CompilingSourceCode.jpg" style="height: 300px;"/>
+    <figcaption align="left">
+        <b>Compiling source code into managed modules (from "CLR via C#")</b>
+    </figcaption>
+</figure>
+<br>
+<br>
+
+## Benefits of Metadata
+- Self-describing files
+- LanguageLanguage interoperability and easier component-based design 
+- Attributes
+<br>
+<br>
+
+## Type's fields and methods of your code by IL Disassembler tool
+When the compiler compiles this code, the result is a type that has a number of fields and methods defined in it.  
+You can easily see this by using the IL Disassembler tool (ILDasm.exe) provided with the .NET Framework SDK to examine the resulting managed module.
+
+<figure align="left">
+    <img src="ILDasmCapture.jpg" style="height: 400px;"/>
+    <figcaption align="left">
+        <b>ILDasm showing the fields and methods (obtained from metadata)</b>
+    </figcaption>
+</figure>
+
+
+## References
+- [Metadata and Self-Describing Components, Microsoft](https://learn.microsoft.com/en-us/dotnet/standard/metadata-and-self-describing-components)
+- CLR via C# 4th edition, Jeffrey Richter
+<br>
+<br>
+<br>
+
+
+# Attributes
+- Attributes provide a powerful method of associating `metadata`, or declarative information, with code  
+  - assemblies, types, methods, properties, and so forth
+- After an attribute is associated with a program entity, the attribute can be queried at ```run-time``` by using a technique called ```reflection```.
+<br>
+<br>
+
+## Properties of attributes
+1. Add ```metadata``` to your program
+   1. You can add custom attributes to specify any ```additional information```.
+2. ```One or more attributes``` can be applied to entire assemblies, modules, or smaller program elements such as classes and properties
+3. Can accept ```arguments``` in the same way as methods and properties
+4. Can examine its own metadata or the metadata in other programs by using ```reflection```.
+
+<br>
+<br>
+
+## Example code1
+
+```c#
+public class AuthorAttribute : System.Attribute
+{
+    string name;
+    int version;
+
+    public int Version
+    {
+        get { return version; }
+        set { version = value; }
+    }
+
+    public AuthorAttribute(string name)
+    {
+        this.name = name;
+    }
+}
+
+[Author("JongSang", Version = 1)]
+public class MyAttrTest
+{
+    string testString;
+    public MyAttrTest(string str)
+    {
+        testString = str;
+    }
+
+    public void Print()
+    {
+        Console.WriteLine(testString);
+    }
+}
+...
+static void TestAttribute()
+{
+    Console.WriteLine("\n==== Test Attributes ====");
+    var myAttrTest = new MyAttrTest("Test");
+}
+```
+<br>
+
+- Metadata information (from ILDasm)
+
+<figure align="left">
+    <img src="MetadataWithAttribute.jpg" style="height: 300px;"/>
+    <figcaption align="left">
+    </figcaption>
+</figure>
+
+> [!NOTE]  
+> By convention, all attribute names end with the word "Attribute" to distinguish them from other items in the .NET libraries.  
+> However, you do not need to specify the attribute suffix when using attributes in code. For example, `[DllImport]` is equivalent to `[DllImportAttribute]`, but `DllImportAttribute` is the attribute's actual name in the .NET Class Library.
+
+<br>
+
+## Example code2
+```csharp
+[Obsolete("ThisClass is obsolete. Use ThisClass2 instead.")]
+public class ThisClass
+{
+    // ...
+}
+...
+static void TestAttribute()
+{
+    var thisClass = new ThisClass();
+}
+```
+It shows the compile warnings.
+<br>
+
+- Intellisense warning
+<figure align="left">
+    <img src="ObsoleteCapture.jpg" style="height: 120px;"/>
+    <figcaption align="left">
+    </figcaption>
+</figure>
+
+<br>
+
+- Build output warning
+<figure align="left">
+    <img src="ObsoleteCapture2.jpg" style="height: 40px;"/>
+    <figcaption align="left">
+    </figcaption>
+</figure>
+
+- Metadata information (from ILDasm)
+<figure align="left">
+    <img src="ObsoleteMetadata.jpg" style="height: 200px;"/>
+    <figcaption align="left">
+    </figcaption>
+</figure>
+
+<br>
+<br>
+
+## Example code3
+By using attributes, you can customize how structs are laid out in memory.  
+For example, you can create what is known as a union in C/C++ by using the StructLayout(LayoutKind.Explicit) and FieldOffset attributes.  
+All of the fields of TestUnion start at the same location in memory.
+```c#
+[System.Runtime.InteropServices.StructLayout(LayoutKind.Explicit)]
+struct TestUnion
+{
+    [System.Runtime.InteropServices.FieldOffset(0)]
+    public int i;
+
+    [System.Runtime.InteropServices.FieldOffset(0)]
+    public double d;
+
+    [System.Runtime.InteropServices.FieldOffset(0)]
+    public char c;
+
+    [System.Runtime.InteropServices.FieldOffset(0)]
+    public byte b;
+}
+```
+- Metadata information (from ILDasm)
+<figure align="left">
+    <img src="MemoryOffset.jpg" style="height: 500px;"/>
+    <figcaption align="left">
+    </figcaption>
+</figure>
+
+
+<br>
+<br>
+
+## Atribute targets
+The list of possible `target` values is shown in the following table.
+
+Target value|Applies to|
+|------------------|----------------|
+|`assembly`|Entire assembly|
+|`module`|Current assembly module|
+|`field`|Field in a class or a struct|
+|`event`|Event|
+|`method`|Method or `get` and `set` property accessors|
+|`param`|Method parameters or `set` property accessor parameters|
+|`property`|Property|
+|`return`|Return value of a method, property indexer, or `get` property accessor|
+|`type`|Struct, class, interface, enum, or delegate|
+<br>
+
+```csharp
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+class AuthorAttribute : System.Attribute
+{
+    //
 }
 ```
 
 
+Refer to [Attributes (C#), Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/)
+<br>
+<br>
 
 
-
-
-
-
-
-
-
-
+References
+- [How to create a C/C++ union by using attributes(C#)](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/how-to-create-a-c-cpp-union-by-using-attributes)
+- [DllImport Attribute, techopedia](https://www.techopedia.com/definition/25611/dllimport-attribute)
 
 
 
