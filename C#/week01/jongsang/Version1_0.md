@@ -291,7 +291,7 @@ References
 ```delegate``` can be declared as the below.
 
 ```c#
-access-modifier delegate return-type (parameter-list);
+access-modifier delegate return-type delegate-name(parameter-list);
 
 // Example
 public class Disk
