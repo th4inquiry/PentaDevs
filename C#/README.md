@@ -19,7 +19,7 @@
 | 03 | Sep 27 | Oct 19, 26 | Object-oriented programming | JongSang Tack | Done |
 | 04 | Oct 13 | Oct 26, Nov 02 | Functional techniques | Byongmin Park | Done |
 | 05 | Oct 13 | Nov 02, 09 | Coding style | Hyunjung Jang | Done |
-| 06 | Oct 13 | Nov 09, 16 | Exceptions and errors | Taehwan Kim | In progress |
+| 06 | Oct 13 | Nov 09, 16 | Exceptions and errors | Taehwan Kim | Done |
 <br>
 
 ### Phase 2 : Plan for C# 1.0 ~ 8.0
