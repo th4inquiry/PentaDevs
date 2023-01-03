@@ -63,6 +63,14 @@ Figure 1-1 shows the process of compiling source code files. As the figure shows
 source code files written in any programming language that supports the CLR. Then you use the corresponding compiler to check the syntax and analyze the source code. `Regardless of which compiler you use, the result is a managed module`. A managed module is a standard 32-bit Microsoft Windows portable executable (PE32) file or a standard 64-bit Windows portable executable (PE32+) file that requires the CLR to execute. By the way, managed assemblies always take advantage of Data Execution Prevention (DEP) and Address Space Layout Randomization (ASLR) in Windows; these two features improve the security of your whole system.  
 <br>
 
+<figure align="left">
+    <img src="PartsOfManagedModule.png" style="height: 450px;"/>
+    <figcaption align="left">
+    </figcaption>
+</figure>
+
+<br>
+
 ## Managed code
 Native code compilers produce code targeted to a specific CPU architecture, such as x86, x64, or ARM. `All CLR-compliant compilers produce IL code instead`. (I’ll go into more detail about IL code later in this chapter.) IL code is sometimes referred to as `managed code because the CLR manages its execution`. 
 
