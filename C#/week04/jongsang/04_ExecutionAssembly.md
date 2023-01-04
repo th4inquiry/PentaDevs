@@ -1,4 +1,4 @@
-# Excution model
+# Execution model
 All text and almost figures in this file are from the book, "CLR via C#"  
 <br>
 
@@ -272,9 +272,10 @@ If an unmanaged application calls the Win32 LoadLibrary function to load a manag
 
 1. CLR detects `all of the types` that are referenced by *`Main`*'s code.
 1. CLR `allocate` an internal data structure that is used to manage access to the referenced types.
+1. In Figure 1-4, the Main method refers to a single type, **Console**, causing the CLR to allocate a single internal structure.
 1. This internal data structure `contains an entry for each method` defined by the `Console` type.
 1. Each entry `holds the address` where the method’s implementation can be found.
-1. When initializing this structure, the CLR sets each entry to an internal, undocumented function contained inside the CLR itself. (`JITCompiler`, Just-in time Compiler)
+1. When initializing this structure, the CLR sets each entry to an internal, undocumented function contained inside the CLR itself. (It is called `JITCompiler`, Just-in time Compiler)
 1. When Main makes its first call to WriteLine, the `JITCompiler function` is called.
 1. The JITCompiler function is responsible for compiling a method’s `IL code into native CPU instructions`.
     - JITCompiler function knows what method is being called and what type defines this method.
