@@ -27,16 +27,17 @@
 | No. | From | To/Meeting | Topic | Leader | Status |
 |---|---|---|---|---|---|
 | 01 | Nov 11 | Nov 23 | C# 1.0, 1.2, 2.0<br>- Structs<br>- Interfaces<br>- Delegate<br>- Events<br>- Metadata<br>- Attributes<br>- Iterator | Jongsang Tack | Done |
-| 02 | Nov 24 | Nov 30 | C# 3.0 | Hyunjung Jang | To do |
-| 03 | Dec 01  | Dec 07 | C# 4.0, 5.0 | Yongho Kang | To do |
-| 04 | Dec 08 | Dec 14 | CLR's Execution Model  | Jongsang Tack | To do |
-| 05 | Dec 15 | Dec 21 | C# 6.0 | Byongmin Park | To do |
-| Break | Dec 22 | Dec 28 | Merry Christmas!! | All | To do |
-| 06 | Dec 29 | Jan 04, 2023 | C# 7.0, 7.1 | Taehwan Kim | To do |
-| 07 | Jan 05 | Jan 11 | C# 7.2, 7.3 | Yongho Kang | To do |
-| 08 | Jan 02 | Jan 18 | MOQ | Byongmin Park | To do |
-| 09 | Jan 19 | Jan 25 | C# 8.0 | Hyunjung Jang | To do |
-| 10 | Jan 26 | Feb 01 | Gargabe Collector | Taehwan Kim | To do |
+| 02 | Nov 24 | Nov 30, Dec 07 | C# 3.0 | Hyunjung Jang | Done |
+| 03 | Dec 01 | Dec 07, Dec 21 | C# 4.0, 5.0 | Yongho Kang | Done |
+| Break | Dec 22 | Dec 28 | Merry Christmas!! | All | Done |
+| 04 | Dec 29 | Jan 04, 2023 | CLR's Execution Model | JongSang Tack | Done |
+| 05 | Jan 05 | Jan 11 | C# 6.0 | Byongmin Park | To do |
+| 06 | Jan 12 | Jan 18 | C# 7.0, 7.1 | Taehwan Kim | To do |
+| 07 | Jan 19 | Jan 25 | C# 7.2, 7.3 | Yongho Kang | To do |
+| 08 | Jan 26 | Feb 01 | MOQ | Byongmin Park | To do |
+| 09 | Feb 02 | Feb 08 | C# 8.0 | Hyunjung Jang | To do |
+| 10 | Feb 09 | Feb 15 | Gargabe Collector | Taehwan Kim | To do |
+
 ## Idea
 
 ### Subject proposal
