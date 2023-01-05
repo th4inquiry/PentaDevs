@@ -26,7 +26,7 @@
 
 | No. | From | To/Meeting | Topic | Leader | Status |
 |---|---|---|---|---|---|
-| 01 | Nov 11 | Nov 23 | C# 1.0, 1.2, 2.0<br>- Structs<br>- Interfaces<br>- Delegate<br>- Events<br>- Metadata<br>- Attributes<br>- Iterator | Jongsang Tack | Done |
+| 01 | Nov 11 | Nov 23 | C# 1.0, 1.2, 2.0 | Jongsang Tack | Done |
 | 02 | Nov 24 | Nov 30, Dec 07 | C# 3.0 | Hyunjung Jang | Done |
 | 03 | Dec 01 | Dec 07, Dec 21 | C# 4.0, 5.0 | Yongho Kang | Done |
 | Break | Dec 22 | Dec 28 | Merry Christmas!! | All | Done |
