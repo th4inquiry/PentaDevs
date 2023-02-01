@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpV7", "CSharpV7\CSharpV7.csproj", "{E9EBB9BE-6D4C-4EEC-93FD-615641AAA505}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2043C0C6-0067-456A-B5F5-7C8CB854A1EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Markdown", "Markdown", "{B3570D0A-669B-4FF9-B521-7583DB6DE12C}"
+	ProjectSection(SolutionItems) = preProject
+		CSharpV7.md = CSharpV7.md
+		OutVariables.md = OutVariables.md
+		TupleTypes.md = TupleTypes.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9EBB9BE-6D4C-4EEC-93FD-615641AAA505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9EBB9BE-6D4C-4EEC-93FD-615641AAA505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9EBB9BE-6D4C-4EEC-93FD-615641AAA505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9EBB9BE-6D4C-4EEC-93FD-615641AAA505}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3570D0A-669B-4FF9-B521-7583DB6DE12C} = {2043C0C6-0067-456A-B5F5-7C8CB854A1EE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2F4FDBF-1A9E-4FE2-85BE-C6A01FD7BB66}
+	EndGlobalSection
+EndGlobal
