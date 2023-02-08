@@ -31,9 +31,9 @@ The new language features in this release are:
   * The entry point for an application can have the async modifier.
 * [default literal expressions](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/default#default-literal)
   * You can use default literal expressions in default value expressions when the target type can be inferred.
-* Inferred tuple element names
+* [Inferred tuple element names](https://gunnarpeipman.com/csharp-inferred-tuple-names)
   * The names of tuple elements can be inferred from tuple initialization in many cases.
-* Pattern matching on generic type parameters
+* [Pattern matching on generic type parameters](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-7.1/generics-pattern-match)
   * You can use pattern match expressions on variables whose type is a generic type parameter.
 
 Finally, the compiler has two options -refout and -refonly that control reference assembly generation
