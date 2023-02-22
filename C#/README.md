@@ -32,12 +32,12 @@
 | Break | Dec 22 | Dec 28 | Merry Christmas!! | All |  |
 | 04 | Dec 29 | Jan 04, 2023 | CLR's Execution Model | JongSang Tack | Done |
 | 05 | Jan 05 | Jan 11 | C# 6.0 | Byongmin Park | Done |
-| 06 | Jan 12 | Jan 18 | C# 7.0, 7.1 | Taehwan Kim | To do |
 | Break | Jan 19 | Jan 25 | Happy New Year!! | All |  |
-| 07 | Jan 26 | Feb 01 | C# 7.2, 7.3 | Yongho Kang | To do |
-| 08 | Feb 02 | Feb 08 | MOQ | Byongmin Park | To do |
-| 09 | Feb 09 | Feb 15 | C# 8.0 | Hyunjung Jang | To do |
-| 10 | Feb 16 | Feb 22 | Gargabe Collector | Taehwan Kim | To do |
+| 06 | Jan 26 | Feb 01, Feb 08 | C# 7.0, 7.1 | Taehwan Kim | Done |
+| 07 | Feb 09 | Feb 15, Feb 22 | C# 7.2, 7.3 | HanJu Moon | To do |
+| 08 | Mar 02 | Mar 08 | MOQ | Byongmin Park | To do |
+| 09 | Mar 09 | Mar 15 | C# 8.0 | Hyunjung Jang | To do |
+| 10 | Mar 16 | Mar 22 | Gargabe Collector | Taehwan Kim | To do |
 
 ## Idea
 
